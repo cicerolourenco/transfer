@@ -1,0 +1,69 @@
+<?php
+
+/**
+ * Transação de queries no banco de dados
+ * @author Salve
+ *
+ */
+final class TTransaction
+{
+	private static $_conn;
+	
+	/**
+	 * Não permite instanciar a classe
+	 */
+	private function __construct()
+	{
+		// intencionalmente deixado private e vazio (para não permitir instanciar a classe)
+	}
+	
+	
+	/**
+	 * Abre a conexão com com o banco e inicia a transação
+	 * @param unknown_type $arquivo_db
+	 */
+	public static function open($arquivo_db='')
+	{
+		if(empty(self::$_conn))
+		{
+			self::$_conn = TConnection::open($arquivo_db);
+			self::$_conn->beginTransaction();
+		}
+	}
+	
+	
+	/**
+	 * Retorna a conexão ativa da transação
+	 */
+	public static function get()
+	{
+		return self::$_conn;
+	}
+	
+	
+	/**
+	 * Desfaz todas as operações da transação
+	 */
+	public static function rollback()
+	{
+		if(self::$_conn)
+		{
+			self::$_conn->rollBack();
+			self::$_conn = null;
+		}
+	}
+	
+	
+	/**
+	 * Aplica todas as operações e fecha a transação
+	 */
+	public static function close()
+	{
+		if(self::$_conn)
+		{
+			self::$_conn->commit();
+			self::$_conn = null;
+		}
+	}
+}
+?>

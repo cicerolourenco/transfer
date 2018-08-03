@@ -1,0 +1,100 @@
+<?php
+
+/**
+ * classe TCriteria
+ * Esta classe provê uma interface utilizada para definição de critérios
+ * @author Salve
+ *
+ */
+class TCriteria extends TExpression
+{
+	private $_expressoes;  	// armazena a lista de expressões
+	private $_operadores;  	// armazena a lista de operadores
+	private $_propriedades; // propriedades do critério
+	public $_bool_tem_filtro = false; // define se tem ou não filtro WHERE
+	
+	
+	/**
+	 * CONSTRUTOR
+	 */
+	function __construct()
+	{
+		$this->_expressoes = array();
+		$this->_operadores = array();
+	}
+	
+	
+	/**
+	 * método add
+	 * Adiciona uma expressão ao critério
+	 * @param TFilter $expressao = expressão (objeto TFilter)
+	 * @param unknown_type $operador = operador lógico de comparação
+	 */
+	public function add(TFilter $expressao, $operador = self::AND_OPERATOR)
+	{
+		// na primeira vez, não precisa de operador lógico para concatenar
+		if(empty($this->_expressoes))
+		{
+			$operador = NULL;
+			$this->_bool_tem_filtro = true;
+		}
+
+		// agrega o resultado da expressão à lista de expressões
+		$this->_expressoes[] = $expressao;
+		$this->_operadores[] = $operador;
+	}
+	
+	
+	/**
+	 * (non-PHPdoc)
+	 * @see app.ado/TExpression::dump()
+	 */
+	public function dump()
+	{
+		// concatena a lista de expressões
+		if(is_array($this->_expressoes))
+		{
+			if(count($this->_expressoes)>0)
+			{
+				$resultado = '';
+				foreach ($this->_expressoes as $i=>$expressao)
+				{
+					$operador = $this->_operadores[$i];
+					// concatena o operador com a respectiva expressão
+					$resultado .= $operador . $expressao->dump() . ' ';
+				}
+				$resultado = trim($resultado);
+				return "({$resultado})";
+			}
+		}
+	}
+	
+	
+	/**
+	 * armazena o valor de uma propriedade no vetor $_propriedades
+	 * @param unknown_type $propriedade = nome da propriedade
+	 * @param unknown_type $valor		= valor da propriedade
+	 */
+	public function setProperty($propriedade, $valor)
+	{
+		$this->_propriedades[$propriedade] = isset($valor) ? $valor : NULL;
+	}
+	
+	
+	/**
+	 * Retorna o valor de uma propriedade
+	 * @param unknown_type $propriedade = nome da propriedade requisitada
+	 */
+	public function getProperty($propriedade)
+	{
+		if(isset($this->_propriedades[$propriedade]))
+		{
+			return $this->_propriedades[$propriedade];
+		}
+	}
+	
+}
+
+
+
+?>

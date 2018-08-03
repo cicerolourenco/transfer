@@ -1,0 +1,2335 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <title>Weather Icons | Material Design Admin - Eagle</title>
+    <!-- Favicon-->
+    <link rel="icon" href="../../../favicon.png" type="image/x-icon">
+
+    <!--REQUIRED PLUGIN CSS-->
+    <link href="../../../plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="../../../plugins/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="../../../plugins/node-waves/waves.css" rel="stylesheet" />
+    <link href="../../../plugins/animate-css/animate.css" rel="stylesheet" />
+    <link href="../../../plugins/spinkit/spinkit.css" rel="stylesheet">
+
+    <!--THIS PAGE LEVEL CSS-->
+    <link href="../../../plugins/weather-icons-master/css/weather-icons.css" rel="stylesheet">
+
+    <!--REQUIRED THEME CSS -->
+    <link href="../../../assets/css/style.css" rel="stylesheet">
+    <link href="../../../assets/css/layout.css" rel="stylesheet">
+    <link href="../../../assets/css/themes/main_theme.css" rel="stylesheet" />
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body class="theme-indigo light layout-fixed">
+<div class="wrapper">
+    <div class="page-loader-wrapper">
+        <div class="loader">
+            <div class="sk-wave">
+                <div class="sk-rect sk-rect1 bg-cyan"></div>
+                <div class="sk-rect sk-rect2 bg-cyan"></div>
+                <div class="sk-rect sk-rect3 bg-cyan"></div>
+                <div class="sk-rect sk-rect4 bg-cyan"></div>
+                <div class="sk-rect sk-rect5 bg-cyan"></div>
+            </div>
+            <p>Please wait...</p>
+        </div>
+    </div>
+    <!-- top navbar-->
+    <header class="topnavbar-wrapper">
+        <nav role="navigation" class="navbar topnavbar">
+            <!-- START navbar header-->
+            <div class="navbar-header">
+                <a href="../../../index.html" class="navbar-brand">
+                    <div class="brand-logo">
+                        <img src="../../../assets/images/logo.png" alt="Admin Logo" class="img-responsive">
+                    </div>
+                    <div class="brand-logo-collapsed">
+                        <img src="../../../assets/images/logo-single.png" alt="Admin Logo" class="img-responsive">
+                    </div>
+                </a>
+            </div>
+            <!-- END navbar header-->
+            <!-- START Nav wrapper-->
+            <div class="nav-wrapper">
+                <!-- START Left navbar-->
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="#" data-trigger-resize="" data-toggle-state="aside-collapsed" class="hidden-xs">
+                            <em class="material-icons">menu</em>
+                        </a>
+                        <a href="#" data-toggle-state="aside-toggled" data-no-persist="true" class="visible-xs sidebar-toggle">
+                            <em class="material-icons">menu</em>
+                        </a>
+                    </li>
+                </ul>
+                <!-- END Left navbar-->
+                <!-- START Right Navbar-->
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#" data-search-open="">
+                            <em class="material-icons">search</em>
+                        </a>
+                    </li>
+                    <li class="visible-lg">
+                        <a href="#" data-toggle-fullscreen="">
+                            <em class="material-icons">fullscreen</em>
+                        </a>
+                    </li>
+                    <!-- Notifications -->
+                    <li class="dropdown">
+                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button">
+                            <i class="material-icons">notifications</i>
+                            <span class="badge badge-success">7</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="header">NOTIFICATIONS</li>
+                            <li class="body">
+                                <ul class="menu">
+                                    <li class="media">
+                                        <a href="#">
+                                            <div class="media-left">
+                                                <div class="icon-circle bg-red">
+                                                    <i class="material-icons">done</i>
+                                                </div>
+                                            </div>
+                                            <div class="media-body menu-note">
+                                                <p class="pull-right">Just Now</p>
+                                                <h4> Privacy settings changed</h4>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="media">
+                                        <a href="#">
+                                            <div class="media-left">
+                                                <div class="icon-circle bg-indigo">
+                                                    <i class="material-icons">add</i>
+                                                </div>
+                                            </div>
+                                            <div class="media-body menu-note">
+                                                <p class="pull-right">2 mins</p>
+                                                <h4> Mike has added you as friend</h4>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="media">
+                                        <a href="#">
+                                            <div class="media-left">
+                                                <div class="icon-circle bg-blue">
+                                                    <i class="material-icons">alarm</i>
+                                                </div>
+                                            </div>
+                                            <div class="media-body menu-note">
+                                                <p class="pull-right">20 mins</p>
+                                                <h4> New item added</h4>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="media">
+                                        <a href="#">
+                                            <div class="media-left">
+                                                <div class="icon-circle bg-orange">
+                                                    <i class="material-icons">thumb_up</i>
+                                                </div>
+                                            </div>
+                                            <div class="media-body menu-note">
+                                                <p class="pull-right">2 hrs</p>
+                                                <h4> Ketty like your photo</h4>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="media">
+                                        <a href="#">
+                                            <div class="media-left">
+                                                <div class="icon-circle bg-green">
+                                                    <i class="material-icons">cached</i>
+                                                </div>
+                                            </div>
+                                            <div class="media-body menu-note">
+                                                <p class="pull-right">3 days</p>
+                                                <h4> Server 10 is not working Properly</h4>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="media">
+                                        <a href="#">
+                                            <div class="media-left">
+                                                <div class="icon-circle bg-grey">
+                                                    <i class="material-icons">settings</i>
+                                                </div>
+                                            </div>
+                                            <div class="media-body menu-note">
+                                                <p class="pull-right">5 days</p>
+                                                <h4> Restart your system</h4>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="footer">
+                                <a href="javascript:void(0);">View All Notifications</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- #END# Notifications -->
+                    <!-- Task -->
+                    <li class="dropdown">
+                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button">
+                            <i class="material-icons">mail</i>
+                            <span class="badge badge-danger">7</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="header">
+                                You have
+                                <span class="font-bold">7 New</span> Messages
+                            </li>
+                            <li class="body">
+                                <ul class="menu media-list">
+                                    <li class="media unread">
+                                        <a href="#">
+                                            <div class="media-left">
+                                                <img class="media-object img-circle" width="32" src="../../../assets/images/mail/nine.jpg" alt="user">
+                                            </div>
+                                            <div class="media-body">
+                                                <p class="pull-right"><small>Just Now</small></p>
+                                                <h4 class="media-heading body-text">Lisa Headon</h4>
+                                                <p class="font-12">Cras justo odio, dapibus ac facilisis in.</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="media">
+                                        <a href="#">
+                                            <div class="media-left">
+                                                <img class="media-object img-circle" width="32" src="../../../assets/images/mail/2.jpg" alt="user">
+                                            </div>
+                                            <div class="media-body">
+                                                <p class="pull-right"><small>2 hour ago</small></p>
+                                                <h4 class="media-heading body-text">Lucy Doe</h4>
+                                                <p class="font-12">Duis mollis, est non commodo luctus, nisi erat</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="media">
+                                        <a href="#">
+                                            <div class="media-left">
+                                                <img class="media-object img-circle" width="32" src="../../../assets/images/mail/five.jpg" alt="user">
+                                            </div>
+                                            <div class="media-body">
+                                                <p class="pull-right"><small>12 hour ago</small></p>
+                                                <h4 class="media-heading body-text">Jhon Doe</h4>
+                                                <p class="font-12">Aenean lacinia bibendum nulla sed consectetur. </p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="media">
+                                        <a href="#">
+                                            <div class="media-left">
+                                                <img class="media-object img-circle" width="32" src="../../../assets/images/mail/1.jpg" alt="user">
+                                            </div>
+                                            <div class="media-body">
+                                                <p class="pull-right"><small>2 days ago</small></p>
+                                                <h4 class="media-heading body-text">Daniel Richard</h4>
+                                                <p class="font-12">Donec id elit non mi porta gravida at eget metus. </p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="media">
+                                        <a href="#">
+                                            <div class="media-left">
+                                                <img class="media-object img-circle" width="32" src="../../../assets/images/mail/seven.jpg" alt="user">
+                                            </div>
+                                            <div class="media-body">
+                                                <p class="pull-right"><small>3 days ago</small></p>
+                                                <h4 class="media-heading body-text">Kelly Brook</h4>
+                                                <p class="font-12">Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="media unread">
+                                        <a href="#">
+                                            <div class="media-left">
+                                                <img class="media-object img-circle" width="32" src="../../../assets/images/mail/three.jpg" alt="user">
+                                            </div>
+                                            <div class="media-body">
+                                                <p class="pull-right"><small>4 days ago</small></p>
+                                                <h4 class="media-heading body-text">Olivia Wild</h4>
+                                                <p class="font-12">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="media">
+                                        <a href="#">
+                                            <div class="media-left">
+                                                <img class="media-object img-circle" width="32" src="../../../assets/images/mail/two.jpg" alt="user">
+                                            </div>
+                                            <div class="media-body">
+                                                <p class="pull-right"><small>2 weeks ago</small></p>
+                                                <h4 class="media-heading body-text">Andrew Smith</h4>
+                                                <p class="font-12">Nulla vitae elit libero, a pharetra augue.</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="footer">
+                                <a href="javascript:void(0);">View All Messages</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- #END# Task -->
+                    <li>
+                        <a href="#" data-toggle-state="offsidebar-open" data-no-persist="true">
+                            <em class="material-icons">more_vert</em>
+                        </a>
+                    </li>
+                </ul>
+                <!-- #END# Right Navbar-->
+            </div>
+            <!-- #END# Nav wrapper-->
+            <!-- START Search form-->
+            <form role="search" action="#" class="navbar-form">
+                <div class="form-group has-feedback">
+                    <input type="text" placeholder="Type and search ..." class="form-control">
+                    <em data-search-dismiss="" class="form-control-feedback material-icons">close</em>
+                </div>
+                <button type="submit" class="hidden btn btn-info">Submit</button>
+            </form>
+            <!-- #END# Search form-->
+        </nav>
+        <!-- END Top Navbar-->
+    </header>
+    <!-- sidebar-->
+    <aside class="aside">
+        <!-- START Sidebar (left)-->
+        <div class="aside-inner">
+            <nav data-sidebar-anyclick-close="" class="sidebar">
+                <!-- START sidebar nav-->
+                <ul class="nav menu">
+                    <!-- Iterates over all sidebar items-->
+                    <li class="nav-heading ">
+                        <span>MAIN NAVIGATION</span>
+                    </li>
+                    <li class="">
+                        <a href="#dashboard" title="Dashboard" data-toggle="collapse" class="menu-toggle">
+                            <em class="material-icons">dashboard</em>
+                            <span>Dashboard</span>
+                        </a>
+                        <ul id="dashboard" class="nav sidebar-subnav collapse">
+                            <li class="sidebar-subnav-header">Dashboard</li>
+                            <li>
+                                <a href="../../../index.html" title="Dashboard v1">
+                                    <span>Dashboard v1</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../../../index_2.html" title="Dashboard v2">
+                                    <span>Dashboard v2</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#layout" title="Layouts" data-toggle="collapse" class="menu-toggle">
+                            <em class="material-icons">computer</em>
+                            <span>Layouts</span>
+                        </a>
+                        <ul id="layout" class="nav sidebar-subnav collapse">
+                            <li class="sidebar-subnav-header">Layouts</li>
+                            <li>
+                                <a href="../../../pages/layout/l_no_fixed.html" title="No Fixed">
+                                    <span>Layout No Fixed</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../../../pages/layout/l_fixed.html" title="Fixed All">
+                                    <span>Layout Fixed</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../../../pages/layout/l_boxed.html" title="Layout Boxed">
+                                    <span>Layout Boxed</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../../../pages/layout/l_collapsed.html" title="Sidebar Collapsed">
+                                    <span>Sidebar Collapsed</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../../../pages/layout/l_collapsed_T.html" title="Collapsed Text">
+                                    <span>Collapsed Text</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../../../pages/layout/l_float.html" title="Layout Float">
+                                    <span>Layout Float</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../../../pages/layout/l_scrollbar.html" title="Menu Scrollbar">
+                                    <span>Menu Scrollbar</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-heading ">
+                        <span>UI COMPONENTS</span>
+                    </li>
+                    <li>
+                        <a href="#components" title="Components" data-toggle="collapse" class="menu-toggle">
+                            <em class="material-icons">border_color</em>
+                            <span>Basic UI</span>
+                        </a>
+                        <ul id="components" class="nav sidebar-subnav collapse">
+                            <li class="sidebar-subnav-header">Basic UI</li>
+                            <li>
+                                <a href="../../../pages/basic-ui/alerts.html" title="Alerts">
+                                    <span>Alerts</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../../../pages/basic-ui/badges.html" title="Badges">
+                                    <span>Badges</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../../../pages/basic-ui/breadcrumbs.html" title="Breadcrumbs">
+                                    <span>Breadcrumbs</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../../../pages/basic-ui/buttons.html" title="Buttons">
+                                    <span>Buttons</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../../../pages/basic-ui/cards.html" title="Card">
+                                    <span>Card</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../../../pages/basic-ui/card-draggable.html" title="Card Draggable">
+                                    <span>Card Draggable</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../../../pages/basic-ui/collapse.html" title="Collapse">
+                                    <span>Collapse</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../../../pages/basic-ui/colors.html" title="Colors">
+                                    <span>Colors</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../../../pages/basic-ui/dropdown.html" title="Dropdown">
+                                    <span>Dropdown</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../../../pages/basic-ui/helper-classes.html" title="Helper Classes">
+                                    <span>Helper Classes</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#icon" title="Icons" data-toggle="collapse" class="menu-toggle">
+                                    <span>Icons</span>
+                                </a>
+                                <ul id="icon" class="nav sidebar-subnav collapse">
+                                    <li class="sidebar-subnav-header">Icons</li>
+                                    <li>
+                                        <a href="../../../pages/basic-ui/icon/font-awesome.html" title="Font Awesome">
+                                            <span>Font Awesome</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="../../../pages/basic-ui/icon/glyphicon.html" title="Glyphicon">
+                                            <span>Glyphicon</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="../../../pages/basic-ui/icon/ionicons.html" title="Ionicons">
+                                            <span>Ionicons</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="../../../pages/basic-ui/icon/material-icons.html" title="Material Icons">
+                                            <span>Material Icons</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="../../../pages/basic-ui/icon/simple-line-icon.html" title="Simple Line Icon">
+                                            <span>Simple Line Icon</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="../../../pages/basic-ui/icon/themify-icons.html" title="Themify Icons">
+                                            <span>Themify Icons</span>
+                                        </a>
+                                    </li>
+                                    <li class="active">
+                                        <a href="../../../pages/basic-ui/icon/weather-icons.html" title="Weather Icons">
+                                            <span>Weather Icons</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="../../../pages/basic-ui/icon/7-stroke.html" title="7 Stroke">
+                                            <span>7 Stroke</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="../../../pages/basic-ui/labels.html" title="Labels">
+                                    <span>Labels</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../../../pages/basic-ui/list-group.html" title="List Group">
+                                    <span>List Group</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../../../pages/basic-ui/media-object-thumbnails.html" title="Media Object & Thumbnails">
+                                    <span>Media Object & Thumbnails</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../../../pages/basic-ui/pagination.html" title="Pagination">
+                                    <span>Pagination</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../../../pages/basic-ui/preloaders.html" title="Preloaders">
+                                    <span>Preloaders</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../../../pages/basic-ui/progressbars.html" title="Progress Bars">
+                                    <span>Progress Bars</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../../../pages/basic-ui/nouislider.html" title="Nouislider">
+                                    <span>Nouislider</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../../../pages/basic-ui/range-sliders.html" title="Range Sliders">
+                                    <span>Range Sliders</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../../../pages/basic-ui/spinner-button.html" title="Spinner Button">
+                                    <span>Spinner Button</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../../../pages/basic-ui/tabs.html" title="Tabs">
+                                    <span>Tabs</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../../../pages/basic-ui/tooltips-popovers.html" title="Tooltips Popovers">
+                                    <span>Tooltips Popovers</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../../../pages/basic-ui/treeview.html" title="Treeview">
+                                    <span>Treeview</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../../../pages/basic-ui/typography.html" title="Typography">
+                                    <span>Typography</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#advanceui" title="Advance UI" data-toggle="collapse" class="menu-toggle">
+                            <em class="material-icons">format_color_fill</em>
+                            <span>Advance UI</span>
+                        </a>
+                        <ul id="advanceui" class="nav sidebar-subnav collapse">
+                            <li class="sidebar-subnav-header">Advance UI</li>
+                            <li>
+                                <a href="../../../pages/advance-ui/alertify.html" title="Alertify">
+                                    <span>Alertify</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../../../pages/advance-ui/animations.html" title="Animations">
+                                    <span>Animations</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../../../pages/advance-ui/bootbox.html" title="Bootbox">
+                                    <span>Bootbox</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../../../pages/advance-ui/carousel.html" title="Carousel">
+                                    <span>Carousel</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../../../pages/advance-ui/chips.html" title="Chips">
+                                    <span>Chips</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../../../pages/advance-ui/contextmenu.html" title="Context Menu">
+                                    <span>Context Menu</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../../../pages/advance-ui/image-gallery.html" title="Image Gallery">
+                                    <span>Image Gallery</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../../../pages/advance-ui/lightbox.html" title="Lightbox">
+                                    <span>Lightbox</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../../../pages/advance-ui/masonry.html" title="Masonry">
+                                    <span>Masonry</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../../../pages/advance-ui/modals.html" title="Modals">
+                                    <span>Modals</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../../../pages/advance-ui/notifications.html" title="Notifications">
+                                    <span>Notifications</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../../../pages/advance-ui/scroll-1.html" title="Scroll 1">
+                                    <span>Scroll 1</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../../../pages/advance-ui/scroll-2.html" title="Scroll 2">
+                                    <span>Scroll 2</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../../../pages/advance-ui/session-timeout.html" title="Session Timeout">
+                                    <span>Session Timeout</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../../../pages/advance-ui/session-idle-timeout.html" title="Session Idle Timeout">
+                                    <span>Session Idle Timeout</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../../../pages/advance-ui/sortable-nestable.html" title="Sortable Nestable">
+                                    <span>Sortable Nestable</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../../../pages/advance-ui/sweetalert.html" title="Sweet Alert">
+                                    <span>Sweet Alert</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../../../pages/advance-ui/timeline-basic.html" title="Timeline Basic">
+                                    <span>Timeline Basic</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../../../pages/advance-ui/timeline-horizontal.html" title="Timeline Horizontal">
+                                    <span>Timeline Horizontal</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../../../pages/advance-ui/timeline-single.html" title="Timeline Single">
+                                    <span>Timeline Single</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../../../pages/advance-ui/toastr.html" title="Toastr">
+                                    <span>Toastr</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../../../pages/advance-ui/tour.html" title="Tour">
+                                    <span>Tour</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../../../pages/advance-ui/waves.html" title="Waves">
+                                    <span>Waves</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#elements" title="Elements" data-toggle="collapse"  class="menu-toggle">
+                            <em class="material-icons">extension</em>
+                            <span>Elements</span>
+                        </a>
+                        <ul id="elements" class="nav sidebar-subnav collapse">
+                            <li class="sidebar-subnav-header">Elements</li>
+                            <li>
+                                <a href="../../../pages/elements/hoverideas.html" title="Hover Ideas">
+                                    <span>Hover Ideas</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../../../pages/elements/hoverideas-set2.html" title="Hover Ideas 2">
+                                    <span>Hover Ideas 2</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../../../pages/elements/pricing.html" title="Pricing">
+                                    <span>Pricing</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../../../pages/elements/pricing-2.html" title="Pricing 2">
+                                    <span>Pricing 2</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../../../pages/elements/rating.html" title="Rating">
+                                    <span>Rating</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../../../pages/elements/ribbons.html" title="Ribbons">
+                                    <span>Ribbons</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../../../pages/elements/steps.html" title="Steps">
+                                    <span>Steps</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../../../pages/elements/user-card.html" title="User Card">
+                                    <span>User Card</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#forms" title="Forms" data-toggle="collapse" class="menu-toggle">
+                            <em class="material-icons">assignment</em>
+                            <span>Forms</span>
+                        </a>
+                        <ul id="forms" class="nav sidebar-subnav collapse">
+                            <li class="sidebar-subnav-header">Forms</li>
+                            <li>
+                                <a href="../../../pages/forms/basic-form-elements.html" title="Basic Elements">
+                                    <span>Basic Elements</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#advanceform" title="Advance Element" data-toggle="collapse" class="menu-toggle">
+                                    <span>Advance Element</span>
+                                </a>
+                                <ul id="advanceform" class="nav sidebar-subnav collapse">
+                                    <li class="sidebar-subnav-header">Advance Element</li>
+                                    <li>
+                                        <a href="../../../pages/forms/advance-form-elements/bootstrap-select.html" title="Bootstrap Select">
+                                            <span>Bootstrap Select</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="../../../pages/forms/advance-form-elements/masked-input.html" title="Masked Input">
+                                            <span>Masked Input</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="../../../pages/forms/advance-form-elements/color-picker.html" title="Color Picker">
+                                            <span>Color Picker</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="../../../pages/forms/advance-form-elements/datetimepicker.html" title="Date & Time Picker">
+                                            <span>Date & Time Picker</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="../../../pages/forms/advance-form-elements/advanced-form-elements.html" title="Advance Form Elements">
+                                            <span>Advance Form Elements</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="../../../pages/forms/material-form-elements.html" title="Material Elements">
+                                    <span>Material Elements</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../../../pages/forms/form-layouts.html" title="Form Layout">
+                                    <span>Form Layout</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../../../pages/forms/form-validation.html" title="Form Validation">
+                                    <span>Form Validation</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../../../pages/forms/form-wizard.html" title="Form Wizard">
+                                    <span>Form Wizard</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../../../pages/forms/form-editable.html" title="Form Editable">
+                                    <span>Form Editable</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../../../pages/forms/dropify.html" title="Dropify File Upload">
+                                    <span>Dropify File Upload</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../../../pages/forms/dropzone-fileupload.html" title="Dropzone File Upload">
+                                    <span>Dropzone File Upload</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../../../pages/forms/multiple-fileupload.html" title="Multiple File Upload">
+                                    <span>Multiple File Upload</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../../../pages/forms/image-crop.html" title="Image Cropper">
+                                    <span>Image Cropper</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../../../pages/forms/markdown.html" title="Markdown Form Editor">
+                                    <span>Markdown Form Editor</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../../../pages/forms/ckeditors.html" title="CK Editor">
+                                    <span>CK Editor</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../../../pages/forms/summernote.html" title="Summernote">
+                                    <span>Summernote</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../../../pages/forms/tinymce-editor.html" title="Tinymce Editor">
+                                    <span>Tinymce Editor</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#charts" title="Charts" data-toggle="collapse" class="menu-toggle">
+                            <em class="material-icons">insert_chart</em>
+                            <span>Charts</span>
+                        </a>
+                        <ul id="charts" class="nav sidebar-subnav collapse">
+                            <li class="sidebar-subnav-header">Charts</li>
+                            <li>
+                                <a href="../../../pages/charts/chartjs.html" title="ChartJs">
+                                    <span>ChartJs</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../../../pages/charts/chartist-bar.html" title="Chartist Bar">
+                                    <span>Chartist Bar</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../../../pages/charts/chartist-line-area.html" title="Chartist Line Area">
+                                    <span>Chartist Line Area</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../../../pages/charts/chartist-pie.html" title="Chartist Pie">
+                                    <span>Chartist Pie</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../../../pages/charts/c3.html" title="C3 Charts">
+                                    <span>C3 Charts</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../../../pages/charts/flot.html" title="Flot">
+                                    <span>Flot Chart</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../../../pages/charts/morris.html" title="Morris">
+                                    <span>Morris</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../../../pages/charts/nvd3.html" title="NVD3">
+                                    <span>NVD3</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../../../pages/charts/sparkline.html" title="Sparkline">
+                                    <span>Sparkline</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../../../pages/charts/jquery-knob.html" title="Jquery Knob">
+                                    <span>Jquery Knob</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#tables" title="Tables" data-toggle="collapse" class="menu-toggle">
+                            <em class="material-icons">border_all</em>
+                            <span>Tables</span>
+                        </a>
+                        <ul id="tables" class="nav sidebar-subnav collapse">
+                            <li class="sidebar-subnav-header">Tables</li>
+                            <li>
+                                <a href="../../../pages/tables/normal-tables.html" title="Basic Tables">
+                                    <span>Basic Tables</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../../../pages/tables/responsive-table.html" title="Responsive Table">
+                                    <span>Responsive Table</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../../../pages/tables/footable.html" title="Footable">
+                                    <span>Footable</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../../../pages/tables/editable-table.html" title="Editable">
+                                    <span>Editable</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../../../pages/tables/jquery-datatable.html" title="Jquery Data Tables">
+                                    <span>Jquery Data Tables</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../../../pages/tables/jsgrid.html" title="Jsgrid">
+                                    <span>Jsgrid</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#widgets" title="Widgets" data-toggle="collapse" class="menu-toggle">
+                            <em class="material-icons">widgets</em>
+                            <span>Widgets</span>
+                        </a>
+                        <ul id="widgets" class="nav sidebar-subnav collapse">
+                            <li class="sidebar-subnav-header">Widgets</li>
+                            <li>
+                                <a href="../../../pages/widgets/box-widget.html" title="Box Widget">
+                                    <span>Box Widget</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../../../pages/widgets/blog-widget.html" title="Blog Widget">
+                                    <span>Blog Widget</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../../../pages/widgets/chart-widget.html" title="Chart Widget">
+                                    <span>Chart Widget</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../../../pages/widgets/data-widget.html" title="Data Widget">
+                                    <span>Data Widget</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../../../pages/widgets/social-widget.html" title="Social Widget">
+                                    <span>Social Widget</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../../../pages/widgets/weather-widget.html" title="Weather Widget">
+                                    <span>Weather Widget</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-heading ">
+                        <span>DEVELOPMENT</span>
+                    </li>
+                    <li>
+                        <a href="#appview" title="App Views" data-toggle="collapse" class="menu-toggle">
+                            <em class="material-icons">apps</em>
+                            <span>App Views</span>
+                        </a>
+                        <ul id="appview" class="nav sidebar-subnav collapse">
+                            <li class="sidebar-subnav-header">App Views</li>
+                            <li>
+                                <a href="../../../pages/app-views/article.html" title="Article">
+                                    <span>Article</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../../../pages/app-views/calendar.html" title="Calendar">
+                                    <span>Calendar</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../../../pages/app-views/contacts.html" title="Contacts">
+                                    <span>Contacts</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../../../pages/app-views/chat.html" title="Chat">
+                                    <span>Chat</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../../../pages/app-views/faq.html" title="FAQ">
+                                    <span>FAQ</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../../../pages/app-views/forum.html" title="Forum">
+                                    <span>Forum</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../../../pages/app-views/filemanager.html" title="File Manager">
+                                    <span>File Manager</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../../../pages/app-views/inbox.html" title="Inbox">
+                                    <span>Inbox</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../../../pages/app-views/invoice.html" title="Invoice">
+                                    <span>Invoice</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../../../pages/app-views/search_result.html" title="Search Result">
+                                    <span>Search Result</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../../../pages/app-views/social_board.html" title="Social Board">
+                                    <span>Social Board</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../../../pages/app-views/task_board.html" title="Task Board">
+                                    <span>Task Board</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../../../pages/app-views/to_do.html" title="To Do">
+                                    <span>To Do</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#ecommerce" title="Ecommerce" data-toggle="collapse" class="menu-toggle">
+                            <em class="material-icons">shopping_cart</em>
+                            <span>Ecommerce</span>
+                        </a>
+                        <ul id="ecommerce" class="nav sidebar-subnav collapse">
+                            <li class="sidebar-subnav-header">Ecommerce</li>
+                            <li>
+                                <a href="../../../pages/ecommerce/product-grid.html" title="Product Grid">
+                                    <span>Product Grid</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../../../pages/ecommerce/product-list.html" title="Product List">
+                                    <span>Product List</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../../../pages/ecommerce/checkout.html" title="Checkout">
+                                    <span>Checkout</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../../../pages/ecommerce/product-detail.html" title="Product Detail">
+                                    <span>Product Detail</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../../../pages/ecommerce/ec-cart.html" title="Cart">
+                                    <span>Cart</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../../../pages/ecommerce/ec-order.html" title="Order">
+                                    <span>Order</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#pages" title="Pages" data-toggle="collapse" class="menu-toggle">
+                            <em class="material-icons">pages</em>
+                            <span>Pages</span>
+                        </a>
+                        <ul id="pages" class="nav sidebar-subnav collapse">
+                            <li class="sidebar-subnav-header">Pages</li>
+                            <li>
+                                <a href="../../../pages/extra-page/profile.html" title="Profile">
+                                    <span>Profile</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../../../pages/extra-page/lock-screen.html" title="Lock Screen">
+                                    <span>Lock Screen</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../../extra-page/log_in.html" title="Log In">
+                                    <span>Log In</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../../extra-page/register.html" title="Register">
+                                    <span>Register</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../../../pages/extra-page/forgot-password.html" title="Forgot Password">
+                                    <span>Forgot Password</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../../../pages/extra-page/404.html" title="400 Page">
+                                    <span>404 Page</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../../../pages/extra-page/500.html" title="500 Page">
+                                    <span>500 Page</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../../../pages/extra-page/blank.html" title="Blank Page">
+                                    <span>Blank Page</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="#multilevel" title="Multilevel" data-toggle="collapse" class="menu-toggle">
+                            <em class="material-icons">menu</em>
+                            <span>Multilevel</span>
+                        </a>
+                        <ul id="multilevel" class="nav sidebar-subnav collapse">
+                            <li class="sidebar-subnav-header">Multilevel</li>
+                            <li>
+                                <a href="#level1" title="Level 1" data-toggle="collapse"  class="menu-toggle">
+                                    <span>Level 1</span>
+                                </a>
+                                <ul id="level1" class="nav sidebar-subnav collapse">
+                                    <li class="sidebar-subnav-header">Level 1</li>
+                                    <li>
+                                        <a href="#" title="Level1 Item">
+                                            <span>Level1 Item</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#level2" title="Level 2" data-toggle="collapse" class="menu-toggle">
+                                            <span>Level 2</span>
+                                        </a>
+                                        <ul id="level2" class="nav sidebar-subnav collapse">
+                                            <li class="sidebar-subnav-header">Level 2</li>
+                                            <li>
+                                                <a href="#" title="Level2 Item">
+                                                    <span>Level2 Item</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#level3" title="Level 3" data-toggle="collapse" class="menu-toggle">
+                                                    <span>Level 3</span>
+                                                </a>
+                                                <ul id="level3" class="nav sidebar-subnav collapse">
+                                                    <li class="sidebar-subnav-header">Level 3</li>
+                                                    <li>
+                                                        <a href="#" title="Level3 Item">
+                                                            <span>Level3 Item</span>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+
+                </ul>
+                <!-- END sidebar nav-->
+            </nav>
+        </div>
+        <!-- #END# Sidebar (left)-->
+    </aside>
+    <!-- offsidebar-->
+    <aside class="offsidebar hide">
+        <!-- START Off Sidebar (right)-->
+        <nav>
+            <div role="tabpanel">
+                <!-- Nav tabs-->
+                <ul role="tablist" class="nav nav-tabs nav-tabs-inline nav-justified">
+                    <li role="presentation" class="active">
+                        <a href="#app-skins" aria-controls="app-settings" role="tab" data-toggle="tab">
+                            <em class="material-icons">color_lens</em>
+                        </a>
+                    </li>
+                    <li role="presentation">
+                        <a href="#app-settings" aria-controls="app-chat" role="tab" data-toggle="tab">
+                            <em class="material-icons">settings</em>
+                        </a>
+                    </li>
+                </ul>
+                <!-- Tab panes-->
+                <div class="tab-content">
+                    <div id="app-skins" role="tabpanel" class="tab-pane fade in active">
+                        <ul class="skin_selector" id="sidebar_clr_selector">
+                            <h2>Sidebar Skins</h2>
+                            <li data-theme="light" class="active">
+                                <div class="grey"></div>
+                                <span>Light</span>
+                            </li>
+                            <li data-theme="dark">
+                                <div class="black"></div>
+                                <span>Dark</span>
+                            </li>
+                        </ul>
+                        <ul class="skin_selector" id="skin_selector">
+                            <h2>Navbar Skins</h2>
+                            <li data-theme="red">
+                                <div class="red"></div>
+                                <span>Red</span>
+                            </li>
+                            <li data-theme="pink">
+                                <div class="pink"></div>
+                                <span>Pink</span>
+                            </li>
+                            <li data-theme="purple">
+                                <div class="purple"></div>
+                                <span>Purple</span>
+                            </li>
+                            <li data-theme="indigo">
+                                <div class="indigo"></div>
+                                <span>Indigo</span>
+                            </li>
+                            <li data-theme="blue" class="active">
+                                <div class="blue"></div>
+                                <span>Blue</span>
+                            </li>
+                            <li data-theme="light-blue">
+                                <div class="light-blue"></div>
+                                <span>Light Blue</span>
+                            </li>
+                            <li data-theme="cyan">
+                                <div class="cyan"></div>
+                                <span>Cyan</span>
+                            </li>
+                            <li data-theme="teal">
+                                <div class="teal"></div>
+                                <span>Teal</span>
+                            </li>
+                            <li data-theme="green">
+                                <div class="green"></div>
+                                <span>Green</span>
+                            </li>
+                            <li data-theme="lime">
+                                <div class="lime"></div>
+                                <span>Lime</span>
+                            </li>
+                            <li data-theme="yellow">
+                                <div class="yellow"></div>
+                                <span>Yellow</span>
+                            </li>
+                            <li data-theme="orange">
+                                <div class="orange"></div>
+                                <span>Orange</span>
+                            </li>
+                            <li data-theme="brown">
+                                <div class="brown"></div>
+                                <span>Brown</span>
+                            </li>
+                            <li data-theme="grey">
+                                <div class="grey"></div>
+                                <span>Grey</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="app-settings" role="tabpanel" class="tab-pane fade">
+                        <div class="demo-settings ">
+                            <ul class="setting-list">
+                                <h2>Layout Settings</h2>
+                                <li>
+                                    <span>Fixed</span>
+                                    <div class="switch">
+                                        <label><input id="chk-fixed" type="checkbox"  data-toggle-state="layout-fixed"><span class="lever switch-col-grey"></span></label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span>Boxed</span>
+                                    <div class="switch">
+                                        <label><input id="chk-boxed" type="checkbox" data-toggle-state="layout-boxed"><span class="lever switch-col-grey"></span></label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span>Collapsed</span>
+                                    <div class="switch">
+                                        <label><input id="chk-collapsed" type="checkbox" data-toggle-state="aside-collapsed"><span class="lever switch-col-grey"></span></label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span>Collapsed Text</span>
+                                    <div class="switch">
+                                        <label><input id="chk-collapsed-text" type="checkbox" data-toggle-state="aside-collapsed-text"><span class="lever switch-col-grey"></span></label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span>Float</span>
+                                    <div class="switch">
+                                        <label><input id="chk-float" type="checkbox" data-toggle-state="aside-float"><span class="lever switch-col-grey"></span></label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span>Show Scrollbar</span>
+                                    <div class="switch">
+                                        <label><input id="chk-hover" type="checkbox" data-toggle-state="show-scrollbar" data-target=".sidebar"><span class="lever switch-col-grey"></span></label>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <!-- #END# Off Sidebar (right)-->
+    </aside>
+    <!-- Main section-->
+    <section>
+        <!-- Page content-->
+        <div class="content-wrapper">
+            <div class="container-fluid">
+                <div class="page-header">
+                    <h2>Weather Icons</h2>
+                    <ol class="breadcrumb">
+                        <li><a href="../../../index.html">Home</a></li>
+                        <li><a href="#">Basic UI</a></li>
+                        <li class="active">Icons</li>
+                    </ol>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h2>
+                                    25 New 2.0 Icons!
+                                </h2>
+                                <small>Please check out here for<a href="http://erikflowers.github.io/weather-icons/" target="_blank"> Official Documentation</a></small>
+                                <ul class="card-controls m-r--5">
+                                    <li class="dropdown">
+                                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                            <i class="material-icons">more_vert</i>
+                                        </a>
+                                        <ul class="dropdown-menu dropdown-menu-right">
+                                            <li><a href="javascript:void(0);"><i class="material-icons">assistant_photo</i>Action</a></li>
+                                            <li><a href="javascript:void(0);"><i class="material-icons">print</i>Another action</a></li>
+                                            <li><a href="javascript:void(0);"><i class="material-icons">favorite</i>Something else here</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="body">
+                                <div class="row clearfix demo-icon">
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-day-cloudy-high"></i><span class="icon-name">day-cloudy-high</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-day-light-wind"></i><span class="icon-name">day-light-wind</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-day-sleet"></i><span class="icon-name">day-sleet</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-day-haze"></i> <span class="icon-name">day-haze</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-night-cloudy-high"></i> <span class="icon-name">night-cloudy-high</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-night-alt-partly-cloudy"></i> <span class="icon-name">night-alt-partly-cloudy</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-sleet"></i> <span class="icon-name">sleet</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-moonrise"></i> <span class="icon-name">moonrise</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-moonset"></i> <span class="icon-name">moonset</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-night-sleet"></i> <span class="icon-name">night-sleet</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-night-alt-sleet"></i> <span class="icon-name">night-alt-sleet</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-raindrop"></i> <span class="icon-name">raindrop</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-barometer"></i> <span class="icon-name">barometer</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-humidity"></i> <span class="icon-name">humidity</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-na"></i> <span class="icon-name">na (no report)</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-flood"></i> <span class="icon-name">flood</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-sandstorm"></i> <span class="icon-name">sandstorm</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-tsunami"></i> <span class="icon-name">tsunami</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-earthquake"></i> <span class="icon-name">earthquake</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-fire"></i> <span class="icon-name">fire</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-volcano"></i> <span class="icon-name">volcano</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-train"></i> <span class="icon-name">train</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-small-craft-advisory"></i> <span class="icon-name">small-craft-advisory</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-gale-warning"></i> <span class="icon-name">gale-warning</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-storm-warning"></i> <span class="icon-name">storm-warning</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-hurricane-warning"></i> <span class="icon-name">hurricane-warning</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                                <h2>
+                                    Day Time Icons
+                                </h2>
+                                <ul class="card-controls m-r--5">
+                                    <li class="dropdown">
+                                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                            <i class="material-icons">more_vert</i>
+                                        </a>
+                                        <ul class="dropdown-menu dropdown-menu-right">
+                                            <li><a href="javascript:void(0);"><i class="material-icons">assistant_photo</i>Action</a></li>
+                                            <li><a href="javascript:void(0);"><i class="material-icons">print</i>Another action</a></li>
+                                            <li><a href="javascript:void(0);"><i class="material-icons">favorite</i>Something else here</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="body">
+                                <div class="row clearfix demo-icon">
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-day-sunny"></i> <span class="icon-name">wi-day-sunny</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-day-cloudy"></i> <span class="icon-name">wi-day-cloudy</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-day-cloudy-gusts"></i> <span class="icon-name">wi-day-cloudy-gusts</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-day-cloudy-windy"></i> <span class="icon-name">wi-day-cloudy-windy</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-day-fog"></i> <span class="icon-name">wi-day-fog</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-day-hail"></i> <span class="icon-name">wi-day-hail</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-day-haze"></i> <span class="icon-name">wi-day-haze</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-day-lightning"></i> <span class="icon-name">wi-day-lightning</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-day-rain"></i> <span class="icon-name">wi-day-rain</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-day-rain-mix"></i> <span class="icon-name">wi-day-rain-mix</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-day-rain-wind"></i> <span class="icon-name">wi-day-rain-wind</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-day-showers"></i> <span class="icon-name">wi-day-showers</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-day-sleet"></i> <span class="icon-name">wi-day-sleet</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-day-sleet-storm"></i> <span class="icon-name">wi-day-sleet-storm</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-day-snow"></i> <span class="icon-name">wi-day-snow</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-day-snow-thunderstorm"></i> <span class="icon-name">wi-day-snow-thunderstorm</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-day-snow-wind"></i> <span class="icon-name">wi-day-snow-wind</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-day-sprinkle"></i> <span class="icon-name">wi-day-sprinkle</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-day-storm-showers"></i> <span class="icon-name">wi-day-storm-showers</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-day-sunny-overcast"></i> <span class="icon-name">wi-day-sunny-overcast</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-day-thunderstorm"></i> <span class="icon-name">wi-day-thunderstorm</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-day-windy"></i> <span class="icon-name">wi-day-windy</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-solar-eclipse"></i> <span class="icon-name">wi-solar-eclipse</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-hot"></i> <span class="icon-name">wi-hot</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-day-cloudy-high"></i> <span class="icon-name">wi-day-cloudy-high</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-day-light-wind"></i> <span class="icon-name">wi-day-light-wind</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                                <h2>
+                                    Night Time Icons
+                                </h2>
+                                <ul class="card-controls m-r--5">
+                                    <li class="dropdown">
+                                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                            <i class="material-icons">more_vert</i>
+                                        </a>
+                                        <ul class="dropdown-menu dropdown-menu-right">
+                                            <li><a href="javascript:void(0);"><i class="material-icons">assistant_photo</i>Action</a></li>
+                                            <li><a href="javascript:void(0);"><i class="material-icons">print</i>Another action</a></li>
+                                            <li><a href="javascript:void(0);"><i class="material-icons">favorite</i>Something else here</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="body">
+                                <div class="row clearfix demo-icon">
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-night-clear"></i> <span class="icon-name">wi-night-clear</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-night-alt-cloudy"></i> <span class="icon-name">wi-night-alt-cloudy</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-night-alt-cloudy-gusts"></i> <span class="icon-name">wi-night-alt-cloudy-gusts</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-night-alt-cloudy-windy"></i> <span class="icon-name">wi-night-alt-cloudy-windy</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-night-alt-hail"></i> <span class="icon-name">wi-night-alt-hail</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-night-alt-lightning"></i> <span class="icon-name">wi-night-alt-lightning</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-night-alt-rain"></i> <span class="icon-name">wi-night-alt-rain</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-night-alt-rain-mix"></i> <span class="icon-name">wi-night-alt-rain-mix</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-night-alt-rain-wind"></i> <span class="icon-name">wi-night-alt-rain-wind</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-night-alt-showers"></i> <span class="icon-name">wi-night-alt-showers</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-night-alt-sleet"></i> <span class="icon-name">wi-night-alt-sleet</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-night-alt-sleet-storm"></i> <span class="icon-name">wi-night-alt-sleet-storm</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-night-alt-snow"></i> <span class="icon-name">wi-night-alt-snow</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-night-alt-snow-thunderstorm"></i> <span class="icon-name">wi-night-alt-snow-thunderstorm</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-night-alt-snow-wind"></i> <span class="icon-name">wi-night-alt-snow-wind</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-night-alt-sprinkle"></i> <span class="icon-name">wi-night-alt-sprinkle</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-night-alt-storm-showers"></i> <span class="icon-name">wi-night-alt-storm-showers</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-night-alt-thunderstorm"></i> <span class="icon-name">wi-night-alt-thunderstorm</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-night-cloudy"></i> <span class="icon-name">wi-night-cloudy</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-night-cloudy-gusts"></i> <span class="icon-name">wi-night-cloudy-gusts</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-night-cloudy-windy"></i> <span class="icon-name">wi-night-cloudy-windy</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-night-fog"></i> <span class="icon-name">wi-night-fog</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-night-hail"></i> <span class="icon-name">wi-night-hail</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-night-lightning"></i> <span class="icon-name">wi-night-lightning</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-night-partly-cloudy"></i> <span class="icon-name">wi-night-partly-cloudy</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-night-rain"></i> <span class="icon-name">wi-night-rain</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-night-rain-mix"></i> <span class="icon-name">wi-night-rain-mix</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-night-rain-wind"></i> <span class="icon-name">wi-night-rain-wind</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-night-showers"></i> <span class="icon-name">wi-night-showers</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-night-sleet"></i> <span class="icon-name">wi-night-sleet</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-night-sleet-storm"></i> <span class="icon-name">wi-night-sleet-storm</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-night-snow"></i> <span class="icon-name">wi-night-snow</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-night-snow-thunderstorm"></i> <span class="icon-name">wi-night-snow-thunderstorm</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-night-snow-wind"></i> <span class="icon-name">wi-night-snow-wind</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-night-sprinkle"></i> <span class="icon-name">wi-night-sprinkle</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-night-storm-showers"></i> <span class="icon-name">wi-night-storm-showers</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-night-thunderstorm"></i> <span class="icon-name">wi-night-thunderstorm</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-lunar-eclipse"></i> <span class="icon-name">wi-lunar-eclipse</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-stars"></i> <span class="icon-name">wi-stars</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-storm-showers"></i> <span class="icon-name">wi-storm-showers</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-thunderstorm"></i> <span class="icon-name">wi-thunderstorm</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-night-alt-cloudy-high"></i> <span class="icon-name">wi-night-alt-cloudy-high</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-night-cloudy-high"></i> <span class="icon-name">wi-night-cloudy-high</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-night-alt-partly-cloudy"></i> <span class="icon-name">wi-night-alt-partly-cloudy</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                                <h2>
+                                    Neutral Icons
+                                </h2>
+                                <ul class="card-controls m-r--5">
+                                    <li class="dropdown">
+                                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                            <i class="material-icons">more_vert</i>
+                                        </a>
+                                        <ul class="dropdown-menu dropdown-menu-right">
+                                            <li><a href="javascript:void(0);"><i class="material-icons">assistant_photo</i>Action</a></li>
+                                            <li><a href="javascript:void(0);"><i class="material-icons">print</i>Another action</a></li>
+                                            <li><a href="javascript:void(0);"><i class="material-icons">favorite</i>Something else here</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="body">
+                                <div class="row clearfix demo-icon">
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-cloud"></i> <span class="icon-name">wi-cloud</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-cloudy"></i> <span class="icon-name">wi-cloudy</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-cloudy-gusts"></i> <span class="icon-name">wi-cloudy-gusts</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-cloudy-windy"></i> <span class="icon-name">wi-cloudy-windy</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-fog"></i> <span class="icon-name">wi-fog</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-hail"></i> <span class="icon-name">wi-hail</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-rain"></i> <span class="icon-name">wi-rain</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-rain-mix"></i> <span class="icon-name">wi-rain-mix</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-rain-wind"></i> <span class="icon-name">wi-rain-wind</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-showers"></i> <span class="icon-name">wi-showers</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-sleet"></i> <span class="icon-name">wi-sleet</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-snow"></i> <span class="icon-name">wi-snow</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-sprinkle"></i> <span class="icon-name">wi-sprinkle</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-storm-showers"></i> <span class="icon-name">wi-storm-showers</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-thunderstorm"></i> <span class="icon-name">wi-thunderstorm</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-snow-wind"></i> <span class="icon-name">wi-snow-wind</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-snow"></i> <span class="icon-name">wi-snow</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-smog"></i> <span class="icon-name">wi-smog</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-smoke"></i> <span class="icon-name">wi-smoke</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-lightning"></i> <span class="icon-name">wi-lightning</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-raindrops"></i> <span class="icon-name">wi-raindrops</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-raindrop"></i> <span class="icon-name">wi-raindrop</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-dust"></i> <span class="icon-name">wi-dust</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-snowflake-cold"></i> <span class="icon-name">wi-snowflake-cold</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-windy"></i> <span class="icon-name">wi-windy</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-strong-wind"></i> <span class="icon-name">wi-strong-wind</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-sandstorm"></i> <span class="icon-name">wi-sandstorm</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-earthquake"></i> <span class="icon-name">wi-earthquake</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-fire"></i> <span class="icon-name">wi-fire</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-flood"></i> <span class="icon-name">wi-flood</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-meteor"></i> <span class="icon-name">wi-meteor</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-tsunami"></i> <span class="icon-name">wi-tsunami</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-volcano"></i> <span class="icon-name">wi-volcano</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-hurricane"></i> <span class="icon-name">wi-hurricane</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-tornado"></i> <span class="icon-name">wi-tornado</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-small-craft-advisory"></i> <span class="icon-name">wi-small-craft-advisory</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-gale-warning"></i> <span class="icon-name">wi-gale-warning</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-storm-warning"></i> <span class="icon-name">wi-storm-warning</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-hurricane-warning"></i> <span class="icon-name">wi-hurricane-warning</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-wind-direction"></i> <span class="icon-name">wi-wind-direction</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                                <h2>
+                                    Moon Phase Icons
+                                </h2>
+                                <ul class="card-controls m-r--5">
+                                    <li class="dropdown">
+                                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                            <i class="material-icons">more_vert</i>
+                                        </a>
+                                        <ul class="dropdown-menu dropdown-menu-right">
+                                            <li><a href="javascript:void(0);"><i class="material-icons">assistant_photo</i>Action</a></li>
+                                            <li><a href="javascript:void(0);"><i class="material-icons">print</i>Another action</a></li>
+                                            <li><a href="javascript:void(0);"><i class="material-icons">favorite</i>Something else here</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="body">
+                                <div class="row clearfix demo-icon">
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-moon-new"></i> <span class="icon-name">wi-moon-new</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-moon-waxing-crescent-1"></i> <span class="icon-name">wi-moon-waxing-crescent-1</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-moon-waxing-crescent-2"></i> <span class="icon-name">wi-moon-waxing-crescent-2</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-moon-waxing-crescent-3"></i> <span class="icon-name">wi-moon-waxing-crescent-3</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-moon-waxing-crescent-4"></i> <span class="icon-name">wi-moon-waxing-crescent-4</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-moon-waxing-crescent-5"></i> <span class="icon-name">wi-moon-waxing-crescent-5</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-moon-waxing-crescent-6"></i> <span class="icon-name">wi-moon-waxing-crescent-6</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-moon-first-quarter"></i> <span class="icon-name">wi-moon-first-quarter</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-moon-waxing-gibbous-1"></i> <span class="icon-name">wi-moon-waxing-gibbous-1</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-moon-waxing-gibbous-2"></i> <span class="icon-name">wi-moon-waxing-gibbous-2</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-moon-waxing-gibbous-3"></i> <span class="icon-name">wi-moon-waxing-gibbous-3</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-moon-waxing-gibbous-4"></i> <span class="icon-name">wi-moon-waxing-gibbous-4</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-moon-waxing-gibbous-5"></i> <span class="icon-name">wi-moon-waxing-gibbous-5</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-moon-waxing-gibbous-6"></i> <span class="icon-name">wi-moon-waxing-gibbous-6</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-moon-full"></i> <span class="icon-name">wi-moon-full</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-moon-waning-gibbous-1"></i> <span class="icon-name">wi-moon-waning-gibbous-1</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-moon-waning-gibbous-2"></i> <span class="icon-name">wi-moon-waning-gibbous-2</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-moon-waning-gibbous-3"></i> <span class="icon-name">wi-moon-waning-gibbous-3</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-moon-waning-gibbous-4"></i> <span class="icon-name">wi-moon-waning-gibbous-4</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-moon-waning-gibbous-5"></i> <span class="icon-name">wi-moon-waning-gibbous-5</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-moon-waning-gibbous-6"></i> <span class="icon-name">wi-moon-waning-gibbous-6</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-moon-third-quarter"></i> <span class="icon-name">wi-moon-third-quarter</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-moon-waning-crescent-1"></i> <span class="icon-name">wi-moon-waning-crescent-1</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-moon-waning-crescent-2"></i> <span class="icon-name">wi-moon-waning-crescent-2</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-moon-waning-crescent-3"></i> <span class="icon-name">wi-moon-waning-crescent-3</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-moon-waning-crescent-4"></i> <span class="icon-name">wi-moon-waning-crescent-4</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-moon-waning-crescent-5"></i> <span class="icon-name">wi-moon-waning-crescent-5</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-moon-waning-crescent-6"></i> <span class="icon-name">wi-moon-waning-crescent-6</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-moon-alt-new"></i> <span class="icon-name">wi-moon-alt-new</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-moon-alt-waxing-crescent-1"></i> <span class="icon-name">wi-moon-alt-waxing-crescent-1</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-moon-alt-waxing-crescent-2"></i> <span class="icon-name">wi-moon-alt-waxing-crescent-2</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-moon-alt-waxing-crescent-3"></i> <span class="icon-name">wi-moon-alt-waxing-crescent-3</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-moon-alt-waxing-crescent-4"></i> <span class="icon-name">wi-moon-alt-waxing-crescent-4</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-moon-alt-waxing-crescent-5"></i> <span class="icon-name">wi-moon-alt-waxing-crescent-5</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-moon-alt-waxing-crescent-6"></i> <span class="icon-name">wi-moon-alt-waxing-crescent-6</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-moon-alt-first-quarter"></i> <span class="icon-name">wi-moon-alt-first-quarter</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-moon-alt-waxing-gibbous-1"></i> <span class="icon-name">wi-moon-alt-waxing-gibbous-1</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-moon-alt-waxing-gibbous-2"></i> <span class="icon-name">wi-moon-alt-waxing-gibbous-2</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-moon-alt-waxing-gibbous-3"></i> <span class="icon-name">wi-moon-alt-waxing-gibbous-3</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-moon-alt-waxing-gibbous-4"></i> <span class="icon-name">wi-moon-alt-waxing-gibbous-4</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-moon-alt-waxing-gibbous-5"></i> <span class="icon-name">wi-moon-alt-waxing-gibbous-5</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-moon-alt-waxing-gibbous-6"></i> <span class="icon-name">wi-moon-alt-waxing-gibbous-6</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-moon-alt-full"></i> <span class="icon-name">wi-moon-alt-full</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-moon-alt-waning-gibbous-1"></i> <span class="icon-name">wi-moon-alt-waning-gibbous-1</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-moon-alt-waning-gibbous-2"></i> <span class="icon-name">wi-moon-alt-waning-gibbous-2</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-moon-alt-waning-gibbous-3"></i> <span class="icon-name">wi-moon-alt-waning-gibbous-3</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-moon-alt-waning-gibbous-4"></i> <span class="icon-name">wi-moon-alt-waning-gibbous-4</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-moon-alt-waning-gibbous-5"></i> <span class="icon-name">wi-moon-alt-waning-gibbous-5</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-moon-alt-waning-gibbous-6"></i> <span class="icon-name">wi-moon-alt-waning-gibbous-6</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-moon-alt-third-quarter"></i> <span class="icon-name">wi-moon-alt-third-quarter</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-moon-alt-waning-crescent-1"></i> <span class="icon-name">wi-moon-alt-waning-crescent-1</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-moon-alt-waning-crescent-2"></i> <span class="icon-name">wi-moon-alt-waning-crescent-2</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-moon-alt-waning-crescent-3"></i> <span class="icon-name">wi-moon-alt-waning-crescent-3</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-moon-alt-waning-crescent-4"></i> <span class="icon-name">wi-moon-alt-waning-crescent-4</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-moon-alt-waning-crescent-5"></i> <span class="icon-name">wi-moon-alt-waning-crescent-5</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-moon-alt-waning-crescent-6"></i> <span class="icon-name">wi-moon-alt-waning-crescent-6</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                                <h2>
+                                    Miscellaneous Icons
+                                </h2>
+                                <ul class="card-controls m-r--5">
+                                    <li class="dropdown">
+                                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                            <i class="material-icons">more_vert</i>
+                                        </a>
+                                        <ul class="dropdown-menu dropdown-menu-right">
+                                            <li><a href="javascript:void(0);"><i class="material-icons">assistant_photo</i>Action</a></li>
+                                            <li><a href="javascript:void(0);"><i class="material-icons">print</i>Another action</a></li>
+                                            <li><a href="javascript:void(0);"><i class="material-icons">favorite</i>Something else here</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="body">
+                                <div class="row clearfix demo-icon">
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-alien"></i> <span class="icon-name">wi-alien</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-celsius"></i> <span class="icon-name">wi-celsius</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-fahrenheit"></i> <span class="icon-name">wi-fahrenheit</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-degrees"></i> <span class="icon-name">wi-degrees</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-thermometer"></i> <span class="icon-name">wi-thermometer</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-thermometer-exterior"></i> <span class="icon-name">wi-thermometer-exterior</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-thermometer-internal"></i> <span class="icon-name">wi-thermometer-internal</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-cloud-down"></i> <span class="icon-name">wi-cloud-down</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-cloud-up"></i> <span class="icon-name">wi-cloud-up</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-cloud-refresh"></i> <span class="icon-name">wi-cloud-refresh</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-horizon"></i> <span class="icon-name">wi-horizon</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-horizon-alt"></i> <span class="icon-name">wi-horizon-alt</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-sunrise"></i> <span class="icon-name">wi-sunrise</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-sunset"></i> <span class="icon-name">wi-sunset</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-moonrise"></i> <span class="icon-name">wi-moonrise</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-moonset"></i> <span class="icon-name">wi-moonset</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-refresh"></i> <span class="icon-name">wi-refresh</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-refresh-alt"></i> <span class="icon-name">wi-refresh-alt</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-umbrella"></i> <span class="icon-name">wi-umbrella</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-barometer"></i> <span class="icon-name">wi-barometer</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-humidity"></i> <span class="icon-name">wi-humidity</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-na"></i> <span class="icon-name">wi-na</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-train"></i> <span class="icon-name">wi-train</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                                <h2>
+                                    Time Icons
+                                </h2>
+                                <ul class="card-controls m-r--5">
+                                    <li class="dropdown">
+                                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                            <i class="material-icons">more_vert</i>
+                                        </a>
+                                        <ul class="dropdown-menu dropdown-menu-right">
+                                            <li><a href="javascript:void(0);"><i class="material-icons">assistant_photo</i>Action</a></li>
+                                            <li><a href="javascript:void(0);"><i class="material-icons">print</i>Another action</a></li>
+                                            <li><a href="javascript:void(0);"><i class="material-icons">favorite</i>Something else here</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="body">
+                                <div class="row clearfix demo-icon">
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-time-1"></i> <span class="icon-name">wi-time-1</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-time-2"></i> <span class="icon-name">wi-time-2</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-time-3"></i> <span class="icon-name">wi-time-3</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-time-4"></i> <span class="icon-name">wi-time-4</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-time-5"></i> <span class="icon-name">wi-time-5</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-time-6"></i> <span class="icon-name">wi-time-6</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-time-7"></i> <span class="icon-name">wi-time-7</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-time-8"></i> <span class="icon-name">wi-time-8</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-time-9"></i> <span class="icon-name">wi-time-9</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-time-10"></i> <span class="icon-name">wi-time-10</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-time-11"></i> <span class="icon-name">wi-time-11</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-time-12"></i> <span class="icon-name">wi-time-12</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                                <h2>
+                                    Directional Arrows
+                                </h2>
+                                <ul class="card-controls m-r--5">
+                                    <li class="dropdown">
+                                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                            <i class="material-icons">more_vert</i>
+                                        </a>
+                                        <ul class="dropdown-menu dropdown-menu-right">
+                                            <li><a href="javascript:void(0);"><i class="material-icons">assistant_photo</i>Action</a></li>
+                                            <li><a href="javascript:void(0);"><i class="material-icons">print</i>Another action</a></li>
+                                            <li><a href="javascript:void(0);"><i class="material-icons">favorite</i>Something else here</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="body">
+                                <div class="row clearfix demo-icon">
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-direction-up"></i> <span class="icon-name">wi-direction-up</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-direction-up-right"></i> <span class="icon-name">wi-direction-up-right</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-direction-right"></i> <span class="icon-name">wi-direction-right</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-direction-down-right"></i> <span class="icon-name">wi-direction-down-right</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-direction-down"></i> <span class="icon-name">wi-direction-down</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-direction-down-left"></i> <span class="icon-name">wi-direction-down-left</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-direction-left"></i> <span class="icon-name">wi-direction-left</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-direction-up-left"></i> <span class="icon-name">wi-direction-up-left</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                                <h2>
+                                    Beaufort Wind Scale Icons
+                                </h2>
+                                <ul class="card-controls m-r--5">
+                                    <li class="dropdown">
+                                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                            <i class="material-icons">more_vert</i>
+                                        </a>
+                                        <ul class="dropdown-menu dropdown-menu-right">
+                                            <li><a href="javascript:void(0);"><i class="material-icons">assistant_photo</i>Action</a></li>
+                                            <li><a href="javascript:void(0);"><i class="material-icons">print</i>Another action</a></li>
+                                            <li><a href="javascript:void(0);"><i class="material-icons">favorite</i>Something else here</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="body">
+                                <div class="row clearfix demo-icon">
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-wind-beaufort-0"></i> <span class="icon-name">wi-wind-beaufort-0</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-wind-beaufort-1"></i> <span class="icon-name">wi-wind-beaufort-1</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-wind-beaufort-2"></i> <span class="icon-name">wi-wind-beaufort-2</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-wind-beaufort-3"></i> <span class="icon-name">wi-wind-beaufort-3</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-wind-beaufort-4"></i> <span class="icon-name">wi-wind-beaufort-4</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-wind-beaufort-5"></i> <span class="icon-name">wi-wind-beaufort-5</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-wind-beaufort-6"></i> <span class="icon-name">wi-wind-beaufort-6</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-wind-beaufort-7"></i> <span class="icon-name">wi-wind-beaufort-7</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-wind-beaufort-8"></i> <span class="icon-name">wi-wind-beaufort-8</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-wind-beaufort-9"></i> <span class="icon-name">wi-wind-beaufort-9</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-wind-beaufort-10"></i> <span class="icon-name">wi-wind-beaufort-10</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-wind-beaufort-11"></i> <span class="icon-name">wi-wind-beaufort-11</span>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                        <i class="icon-display wi wi-wind-beaufort-12"></i> <span class="icon-name">wi-wind-beaufort-12</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- FOOTER-->
+    <footer>
+        <span>&copy; 2017 - Eagle Template By <b class="col-blue">Bylancer</b></span>
+    </footer>
+</div>
+<!-- CORE PLUGIN JS -->
+<script src="../../../plugins/jquery/jquery.min.js"></script>
+<script src="../../../plugins/bootstrap/js/bootstrap.js"></script>
+<script src="../../../plugins/modernizr/modernizr.custom.js"></script>
+<script src="../../../plugins/screenfull/dist/screenfull.js"></script>
+<script src="../../../plugins/jQuery-Storage-API/jquery.storageapi.js"></script>
+<script src="../../../plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
+<script src="../../../plugins/node-waves/waves.js"></script>
+
+<!-- LAYOUT JS -->
+<script src="../../../assets/js/demo.js"></script>
+<script src="../../../assets/js/layout.js"></script>
+
+</body>
+
+</html>

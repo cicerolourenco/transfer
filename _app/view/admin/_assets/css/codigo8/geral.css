@@ -1,0 +1,146 @@
+
+/* Geral */
+
+
+
+
+/* DataTables */
+
+.dataTable.table > thead > tr > th {
+	font-weight: bold;
+	color: #333; 
+	border-bottom-color: #666;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) {
+    background-color: #f9f9f987;
+}
+
+.table-hover > tbody > tr:hover {
+    background-color: #52ebff0f;
+}
+
+.dataTable.table td {
+    font-size: 16px;
+    line-height: 30px;
+}
+
+
+
+/*  FORMS */
+
+h4.card-inner-header {margin-bottom: 25px; padding-bottom: 5px; border-bottom: 1px solid #f5f5f5; color: #ccc;}
+
+.card .form-group {margin-bottom: 30px;}
+.card label.form-label {margin-bottom: 0;}
+
+.card .form-group input, 
+.card .form-group select {
+    line-height: 30px; font-size: 18px; height: 34px; padding-top: 0; padding-bottom: 0;
+}
+.card .form-line.error .help-info {color: #f00; margin-top: 1px;}
+
+
+.form-group label.error {margin-top: 0; text-align: right;}
+
+
+.card .toplabel {margin-bottom: 10px;}
+.card .toplabel em {font-style: normal; color: #bbb;}
+
+.card.ver .bt_editar {
+	position: absolute;
+	top: 0;
+	right: 10px;
+}
+
+span.value {
+    display: block;
+    width: 100%;
+    line-height: 35px;
+    padding-left: 0;
+    margin-top: 0;
+
+    font-size: 18px;
+    color: #555;	
+
+    border: none;
+    box-shadow: none;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    border-radius: 0;
+}
+    span.value.textarea {
+        font-size: 14px; line-height: 20px; padding-top: 6px;
+    }
+
+.card .form-group .form-line .form-control {background-color: #fcfcfc;}
+.card .preloader, 
+.card.ver .help-info, 
+.card.ver .help-block, 
+.card.ver .botoes,
+.card.inserir span.value, 
+.card.editar span.value, 
+.card.inserir .bt_editar,
+.card.editar .bt_editar,
+.card.ver .checklabel,
+.card.ver input,
+.card.ver textarea,
+.card.ver select { 
+	display: none;
+}
+.card.ver .form-group .form-line {border: none;}
+
+
+/* blocos condicionais (só aparecem quando estiverem na VIEW indicada */
+.cond {
+    display: none;
+}
+    .card.inserir .cond.inserir, 
+    .card.editar .cond.editar, 
+    .card.ver .cond.ver {
+        display: block;
+    }
+
+
+
+
+.card .checkvalue {color: #777; font-size: 13px; line-height: 1em;}
+.card .checkvalue .fa-check {color: #2196F3; margin-right: 10px;}
+.card .checkvalue .fa-times {color: #900; margin-right: 10px;}
+
+
+
+
+/* --- FULL CALENDAR ---- */
+#calendar table thead th {
+    background-color: #eee;
+    font-weight: bold;
+    padding: 5px;
+} 
+
+#calendar table tbody td {
+    background-color: #fff;
+    border-color: #eee;
+}
+    #calendar table tbody td.fc-today {
+        background-color: #52ebff0f;
+    } 
+
+#calendar h2 {font-size: 25px;}
+
+#calendar .fc-toolbar {margin-top: 14px;}
+
+
+
+/*  agenda (próximas reservas) */
+
+.card.proximas td {padding: 5px;}
+.card.proximas td i {margin-right: 10px; font-size: 12px;}
+    .card.proximas td.chegada i {color: #900;}
+    .card.proximas td.partida i {color: #090;}
+
+
+.card.proximas td a {color: #666;}
+.card.proximas td strong {display: block; clear: left;}
+.body-lg .card.proximas td strong {width: auto; display: inline; margin-right: 10px;}

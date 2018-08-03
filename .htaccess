@@ -1,0 +1,41 @@
+
+# TRECHO PARA A LOCAWEB USAR A VERSÃO 5.3 DO PHP
+#-----------------------------------------------
+#AddHandler php53-script .php
+#suPHP_ConfigPath /home/site62083/
+#-----------------------------------------------
+
+
+RewriteEngine On
+
+# ----------------------------------------------------------------------
+# To rewrite "example.com -> www.example.com"
+# ----------------------------------------------------------------------
+
+<IfModule mod_rewrite.c>
+	RewriteCond %{HTTPS} !=on
+	RewriteCond %{HTTP_HOST} !^www\..+$ [NC]
+	RewriteCond %{HTTP_HOST} !^localhost.*$
+	RewriteRule ^(.*)$ http://www.%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+</IfModule>
+
+
+# ---------------------------------------------------------------------------------------
+# To rewrite URL "example.com/a/test1/b/test2 -> www.example.com/index.php?a=test1&b=test2"
+# ---------------------------------------------------------------------------------------
+RewriteCond %{SCRIPT_FILENAME} !-f
+RewriteCond %{SCRIPT_FILENAME} !-d
+RewriteCond $1 !^(index\.php|css/|js/|teste/|admin/|facebook/|homolog/|emkt/|userfiles/|img/|min/)
+RewriteRule ^(.*)$ index.php?url=$1 
+
+
+
+
+# ----------------------------------------------------------------------
+# Allow concatenation from within specific js and css files
+# ----------------------------------------------------------------------
+
+ <FilesMatch "\.combined\.(js|css)$">
+         Options +Includes
+         SetOutputFilter INCLUDES
+ </FilesMatch>
