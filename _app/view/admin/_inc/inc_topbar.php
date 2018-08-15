@@ -39,11 +39,15 @@
                 <!-- END Left navbar-->
                 <!-- START Right Navbar-->
                 <ul class="nav navbar-nav navbar-right">
+                    <?php
+                    /*
                     <li>
                         <a href="#" data-search-open="">
                             <em class="material-icons">search</em>
                         </a>
                     </li>
+                    */
+                    ?>
                     <li class="visible-lg">
                         <a href="#" data-toggle-fullscreen="">
                             <em class="material-icons">fullscreen</em>
