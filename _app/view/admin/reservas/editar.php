@@ -59,11 +59,11 @@
                 </div>
 
                 <div class="col-md-6 col-lg-2">
-                    <?php \Campo::write($this, array('id'=>'qtd_chd_5', 'label'=>'Bebês 0 a 4 anos', 'type'=>'select', 'lista_simples'=>array(0,1,2,3,4,5,6,7,8,9,10))); ?>
+                    <?php \Campo::write($this, array('id'=>'qtd_chd_5', 'label'=>'Bebês', 'obs'=>'(0 a 4 anos)', 'type'=>'select', 'lista_simples'=>array(0,1,2,3,4,5,6,7,8,9,10))); ?>
                 </div>
 
                 <div class="col-md-6 col-lg-2">
-                    <?php \Campo::write($this, array('id'=>'qtd_chd_10', 'label'=>'Crianças 5 a 9 anos', 'type'=>'select', 'lista_simples'=>array(0,1,2,3,4,5,6,7,8,9,10))); ?>
+                    <?php \Campo::write($this, array('id'=>'qtd_chd_10', 'label'=>'Crianças', 'obs'=>'(5 a 9 anos)', 'type'=>'select', 'lista_simples'=>array(0,1,2,3,4,5,6,7,8,9,10))); ?>
                 </div>
 
                 <div class="col-md-6 col-lg-3">
