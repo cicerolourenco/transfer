@@ -2,7 +2,7 @@
 
 error_reporting(E_ALL &  ~E_WARNING &  ~E_NOTICE &  ~E_DEPRECATED &  ~E_STRICT);
 @ini_set('display_errors', 1);
-define('TIMEZONE', 'America/Santiago');//'America/Sao_Paulo');
+define('TIMEZONE', 'America/Santiago');//'America/Sao_Paulo'); // 'America/Los_Angeles');
 date_default_timezone_set(TIMEZONE);
 header('Content-Type: text/html; charset=utf-8');
 session_start();

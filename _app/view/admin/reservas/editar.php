@@ -54,23 +54,27 @@
 
             <div class="row clearfix">
 
-                <div class="col-md-6 col-lg-2">
-                    <?php \Campo::write($this, array('id'=>'qtd_adt', 'label'=>'Quantos adultos?', 'obs'=>'(10 anos ou mais)', 'type'=>'select', 'lista_simples'=>array(1,2,3,4,5,6,7,8,9,10))); ?>
+                <div class="col-md-6 col-lg-3">
+                    <?php \Campo::write($this, array('id'=>'tiporeserva', 'label'=>'Tipo', 'type'=>'select', 'lista'=>ReservaTipo::lista_select(), 'vazia'=>false, 'value'=>$this->tipo)); ?>
                 </div>
 
-                <div class="col-md-6 col-lg-2">
+                <div class="col-md-6 col-lg-3">
+                    <?php \Campo::write($this, array('id'=>'qtd_adt', 'label'=>'Adultos', 'obs'=>'(10 anos ou mais)', 'type'=>'select', 'lista_simples'=>array(1,2,3,4,5,6,7,8,9,10))); ?>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
                     <?php \Campo::write($this, array('id'=>'qtd_chd_5', 'label'=>'Bebês', 'obs'=>'(0 a 4 anos)', 'type'=>'select', 'lista_simples'=>array(0,1,2,3,4,5,6,7,8,9,10))); ?>
                 </div>
 
-                <div class="col-md-6 col-lg-2">
+                <div class="col-md-6 col-lg-3">
                     <?php \Campo::write($this, array('id'=>'qtd_chd_10', 'label'=>'Crianças', 'obs'=>'(5 a 9 anos)', 'type'=>'select', 'lista_simples'=>array(0,1,2,3,4,5,6,7,8,9,10))); ?>
                 </div>
 
-                <div class="col-md-6 col-lg-3">
+                <div class="col-md-6 col-lg-6">
                     <?php \Campo::write($this, array('id'=>'id_bairro', 'label'=>'Bairro', 'type'=>'select', 'lista'=>Bairro::lista_select(), 'vazia'=>true, 'value'=>$this->bairro)); ?>
                 </div>
 
-                <div class="col-md-6 col-lg-3">
+                <div class="col-md-6 col-lg-6">
                     <?php \Campo::write($this, array('id'=>'endereco_destino', 'label'=>'Endereço do destino')); ?>
                 </div>
 
@@ -82,11 +86,11 @@
             <div class="row clearfix">
 
                 <div class="col-md-6 col-lg-3">
-                    <?php \Campo::write($this, array('id'=>'quando_chega', 'label'=>'Pouso previsto', 'type'=>'datetimedupla', 'obs'=>'Voo de chegada')); ?>
+                    <?php \Campo::write($this, array('id'=>'quando_chega', 'label'=>'Pouso previsto', 'type'=>'datetimedupla', 'obs'=>'Voo de chegada', 'obr'=>'')); ?>
                 </div>
 
                 <div class="col-md-6 col-lg-3">
-                    <?php \Campo::write($this, array('id'=>'numero_voo_chega', 'label'=>'Número do voo', 'obs'=>'Voo de chegada')); ?>
+                    <?php \Campo::write($this, array('id'=>'numero_voo_chega', 'label'=>'Número do voo', 'obs'=>'Voo de chegada', 'obr'=>'')); ?>
                 </div>
 
                 <div class="col-md-6 col-lg-3">
@@ -102,15 +106,15 @@
             <div class="row clearfix">
 
                 <div class="col-md-6 col-lg-3">
-                    <?php \Campo::write($this, array('id'=>'quando_parte', 'label'=>'Decolagem prevista', 'type'=>'datetimedupla', 'obs'=>'Voo de partida')); ?>
+                    <?php \Campo::write($this, array('id'=>'quando_parte', 'label'=>'Decolagem prevista', 'type'=>'datetimedupla', 'obs'=>'Voo de partida', 'obr'=>'')); ?>
                 </div>
 
                 <div class="col-md-6 col-lg-3">
-                    <?php \Campo::write($this, array('id'=>'numero_voo_parte', 'label'=>'Número do voo', 'obs'=>'Voo de partida')); ?>
+                    <?php \Campo::write($this, array('id'=>'numero_voo_parte', 'label'=>'Número do voo', 'obs'=>'Voo de partida', 'obr'=>'')); ?>
                 </div>
 
                 <div class="col-md-6 col-lg-3">
-                    <?php \Campo::write($this, array('id'=>'hora_parte_hotel', 'label'=>'Saída do hotel', 'type'=>'horapicker', 'obs'=>'Horário do retorno')); ?>
+                    <?php \Campo::write($this, array('id'=>'hora_parte_hotel', 'label'=>'Saída do hotel', 'type'=>'horapicker', 'obs'=>'Horário do retorno', 'obr'=>'')); ?>
                 </div>
 
                 <div class="col-md-6 col-lg-3 cond ver">
@@ -135,15 +139,15 @@
 
             <div class="row clearfix">
 
-                <div class="col-md-6 col-lg-4">
+                <div class="col-md-12 col-lg-12">
                     <?php \Campo::write($this, array('id'=>'observacoes', 'label'=>'Observações', 'type'=>'textarea', 'maxlength'=>1000, 'contador'=>true, 'obr'=>false)); ?>
                 </div>
 
-                <div class="col-md-6 col-lg-3">
+                <div class="col-md-6 col-lg-6">
                     <?php \Campo::write($this, array('id'=>'id_indicacao', 'label'=>'Indicação', 'type'=>'select', 'lista'=>Indicacao::lista_select(), 'vazia'=>true, 'value'=>$this->indicacao)); ?>
                 </div>
 
-                <div class="col-md-6 col-lg-4">
+                <div class="col-md-6 col-lg-6">
                     <?php \Campo::write($this, array('id'=>'motorista', 'label'=>'Motorista', 'obr'=>false)); ?>
                 </div>
 

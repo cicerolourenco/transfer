@@ -140,7 +140,6 @@ class Controller_regioes extends \Controller
 				$objeto = new \Bairro();
 				$objeto->fromVetor($_POST);
 				
-				$erro = 1;
 				if($erro==0)
 				{
 					$id = $objeto->store();

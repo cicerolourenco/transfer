@@ -97,13 +97,13 @@ class Controller_reservas extends \Controller
 						$objeto->bool_duty_free = $_POST['bool_duty_free'] ? 1 : 0;
 						$objeto->quando_chega = $dt_chega;
 						$objeto->quando_parte = $dt_parte;
+						$objeto->bool_recalcular = null;
+						$bairro = new \Bairro(floor($_POST['id_bairro']));
+						$objeto->id_comuna = $bairro->id_comuna;
 						if($_POST['bool_recalcular'])
 						{
 							$objeto->preco = $objeto->calcula_preco();	
 						}
-						$objeto->bool_recalcular = null;
-						$bairro = new \Bairro(floor($_POST['id_bairro']));
-						$objeto->id_comuna = $bairro->id_comuna;
 						$objeto->store();
 						$msg_sucesso = 'Dados alterados com sucesso.';
 						$modo = 'ver';
@@ -124,6 +124,7 @@ class Controller_reservas extends \Controller
 						$this->view->assign($chave, $valor);
 				}
 			}
+			$this->view->assign('tipo', $objeto->get_tipo());
 			$this->view->assign('bairro', $objeto->get_bairro());
 			$this->view->assign('indicacao', $objeto->get_indicacao());
 		}

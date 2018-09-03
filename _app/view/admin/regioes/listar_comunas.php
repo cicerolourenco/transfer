@@ -43,27 +43,40 @@
                         <table class="table table-bordered table-striped table-hover dataTable tb_dados">
                         <thead>
                             <tr>
-                                <th width="80"></th>
-                                <th>Nome</th>
-                                <th>Preço para até 3 pessoas</th>
-                                <th>Preço para 4 pessoas</th>
-                                <th>Preço acima de 5 pessoas</th>
+                                <th width="70"></th>
+                                <th width="120">Nome</th>
+                                <th>Preço (3)</th>
+                                <th>Preço (4)</th>
+                                <th>Preço (5+)</th>
+                                <th>Ida (3)</th>
+                                <th>Ida (4)</th>
+                                <th>Ida (5+)</th>
+                                <th>Volta (3)</th>
+                                <th>Volta (4)</th>
+                                <th>Volta (5+)</th>
                             </tr>
                         </thead>
                         <tbody>
                             <?php 
                             foreach ($lista as $comuna) 
                             {
+                                $disable_del = !$comuna->pode_deletar() ? 'disabled' : '';
                                 ?>
                                 <tr>
                                     <td>
                                         <a href="editar-comuna/<?=$comuna->id?>" type="button" title="Visualizar" class="btn btn-default waves-effect"><i class="icon-display fa fa-search"></i></a>
-                                        <a href="excluir-comuna/<?=$comuna->id?>" type="button" title="Excluir" class="btn btn-default waves-effect confirm_del"><i class="icon-display fa fa-trash"></i></a>
+                                        <a href="excluir-comuna/<?=$comuna->id?>" type="button" title="Excluir" class="btn btn-default waves-effect confirm_del" <?=$disable_del?> ><i class="icon-display fa fa-trash"></i></a>
                                     </td>
                                     <td><?=$comuna->nome?></td>
                                     <td><?=$comuna->preco3?></td>
                                     <td><?=$comuna->preco4?></td>
                                     <td><?=$comuna->preco5?></td>
+                                    <td><?=$comuna->ida3?></td>
+                                    <td><?=$comuna->ida4?></td>
+                                    <td><?=$comuna->ida5?></td>
+                                    <td><?=$comuna->volta3?></td>
+                                    <td><?=$comuna->volta4?></td>
+                                    <td><?=$comuna->volta5?></td>
                                 </tr>
                                 <?php
                             }

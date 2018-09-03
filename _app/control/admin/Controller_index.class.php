@@ -9,7 +9,6 @@ class Controller_index extends \Controller
 		// Verifica a permissão. Se não tiver permissão, encerra a sessão (e redireciona para o login)
 		\UsuarioCMS::autentica();
 
-
 		//die('ADMIN do site');
 		$this->view = new \View('admin/home.php');
 

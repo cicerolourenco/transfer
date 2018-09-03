@@ -4,6 +4,13 @@ class Indicacao extends Registro
 {
 	const TABLENAME = 'indicacao';
 
+	
+	public function delete()
+	{
+		$this->exclui_relacoes();
+		return parent::delete();
+	}
+
 
 	public static function lista($filtros=null, $propriedades=null)
 	{
@@ -31,4 +38,26 @@ class Indicacao extends Registro
 
 		return $opcoes;
 	}
+
+
+
+
+	
+	public function exclui_relacoes()
+	{
+		$rep = TRepository('Reserva');
+		$crit = new TCriteria();
+		$crit->add(new TFilter('id_indicacao', '=', $this->id));
+		$lista = $rep->load($crit);
+
+		if($lista)
+		{
+			foreach ($lista as $reserva) 
+			{
+				$reserva->id_indicacao = 0;
+				$reserva->store();
+			}
+		}
+	}
+
 }

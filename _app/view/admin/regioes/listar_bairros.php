@@ -52,11 +52,12 @@
                             <?php 
                             foreach ($lista as $bairro) 
                             {
+                                $disable_del = !$bairro->pode_deletar() ? 'disabled' : '';
                                 ?>
                                 <tr>
                                     <td>
                                         <a href="editar-bairro/<?=$bairro->id?>" type="button" title="Visualizar" class="btn btn-default waves-effect"><i class="icon-display fa fa-search"></i></a>
-                                        <a href="excluir-bairro/<?=$bairro->id?>" type="button" title="Excluir" class="btn btn-default waves-effect confirm_del"><i class="icon-display fa fa-trash"></i></a>
+                                        <a href="excluir-bairro/<?=$bairro->id?>" type="button" title="Excluir" class="btn btn-default waves-effect confirm_del" <?=$disable_del?> ><i class="icon-display fa fa-trash"></i></a>
                                     </td>
                                     <td><?=$bairro->nome?></td>
                                     <td><?=$bairro->get_comuna()?></td>

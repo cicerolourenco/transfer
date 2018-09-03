@@ -27,7 +27,7 @@
 
         <div class="col-md-12 col-lg-6">
             <h3>Próximos transfers</h3>
-	        <p>Fuso-horário de Santiago/Chile: <strong id="relogio"></strong></p>
+	        <p>Fuso-horário de <?=date_default_timezone_get()?>: <strong id="relogio"></strong></p>
             <div class="card proximas">
                 <div class="card-header">
                     <?php
@@ -84,7 +84,7 @@
 
 <script type="text/javascript">
 function displayTime() {
-    var time = moment().tz('America/Santiago').format('HH:mm:ss');
+    var time = moment().tz('<?=date_default_timezone_get()?>').format('HH:mm:ss');
     $('#relogio').html(time);
     setTimeout(displayTime, 1000);
 }

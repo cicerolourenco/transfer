@@ -9,15 +9,19 @@
 		
 
 
-				
+				        <?php if(have_rows('lista_carrossel')) : while(have_rows('lista_carrossel')) : the_row(); ?>
+                        <?php
+                            $attachment_id = get_sub_field('imagem');
+                            $imagem = wp_get_attachment_image_src( $attachment_id, 'carrossel' );
+                        ?>
 
-						<div class="h-carousel-item has-overlay" data-interchange="[<?php bloginfo('template_url'); ?>/img/hero/hero-06@small.jpg, small], [<?php bloginfo('template_url'); ?>/img/hero/hero-06@medium.jpg, medium], [<?php bloginfo('template_url'); ?>/img/hero/hero-06@large.jpg, large]">
+						<div class="h-carousel-item has-overlay" data-interchange="[<?php echo $imagem[0]; ?>, small], [<?php echo $imagem[0]; ?>, medium], [<?php echo $imagem[0]; ?>, large]">
 							<div class="row align-center-middle">
 								<div class="column small-12 medium-8 large-10 hinge-in-from-middle-x mui-enter js-animate-container text-center hero-content">
 
-									<p class="h4 js-animate-2 slide-in-left mui-enter">Seu Transfer Aeroporto Hotel Aeroporto em </p>
-									<h1 class="js-animate-1 hinge-in-from-middle-x mui-enter"><span class="mark">Santiago no Chile</span></h1>
-									<p class="h4 js-animate-2 slide-in-right mui-enter">Somos uma empresa especializada em transfer aeroporto hotel aeroporto</p>
+									<p class="h4 js-animate-2 slide-in-left mui-enter"><?php the_sub_field('titulo'); ?></p>
+									<h1 class="js-animate-1 hinge-in-from-middle-x mui-enter"><span class="mark"><?php the_sub_field('subtitulo'); ?></span></h1>
+									<p class="h4 js-animate-2 slide-in-right mui-enter"><?php the_sub_field('texto'); ?></p>
 
 									<div class="button-group align-center">
 										<a class="button rh-button slide-in-up mui-enter js-animate-3 mui-enter-active" href="<?php bloginfo('url'); ?>/reserva/"><i class="rh rh-van-pass-s rh-fw"></i>
@@ -28,7 +32,7 @@
 								</div><!-- /end .column -->
 							</div><!-- /end .row -->
 						</div><!-- /end .h-carousel-item -->
-
+                        <?php endwhile; endif; ?>
 					</div>
 					<div id="hero-carousel-dots">
 						<div class="owl-dots"></div>
@@ -45,6 +49,29 @@
 								<div class="block-header">
 									<h2 class="h3 headline">Faça a reserva do seu transfer!</h2>
 								</div>
+                                <div class="text-center" style="margin-top: 20px;">
+                                    <div class="radio radioreserva">
+                                        <label>
+                                            <input class="tiporeserva" type="radio" name="tiporeserva" value="1" required <?php if($_POST['tiporeserva']==1) echo 'checked'; ?>>
+                                            <span class="custom-radio"><i class="icon-radio-check"></i>
+                                            </span>Ida e Volta
+                                        </label>
+                                    </div>
+                                    <div class="radio radioreserva">
+                                        <label>
+                                            <input class="tiporeserva"  type="radio" name="tiporeserva" value="2" required <?php if($_POST['tiporeserva']==2) echo 'checked'; ?>>
+                                            <span class="custom-radio"><i class="icon-radio-check"></i>
+                                            </span>Somente Ida
+                                        </label>
+                                    </div>
+                                    <div class="radio radioreserva">
+                                        <label>
+                                            <input class="tiporeserva"  type="radio" name="tiporeserva" value="3" required <?php if($_POST['tiporeserva']==3) echo 'checked'; ?>>
+                                            <span class="custom-radio"><i class="icon-radio-check"></i>
+                                            </span>Somente Volta
+                                        </label>
+                                    </div>
+                                </div>
 								<div class="align-center">
 									<div class="row small-up-1 medium-up-3">
 										<div class="column">
@@ -148,7 +175,11 @@
 
 							<div class="column small-12 medium-5 large-7 s-welcome-image">
 								<figure>
-									<img src="<?php bloginfo('template_url'); ?>/img/welcome-image@large.png" data-interchange="[<?php bloginfo('template_url'); ?>/img/welcome-image@small.png, small], [<?php bloginfo('template_url'); ?>/img/welcome-image@medium.png, medium], [<?php bloginfo('template_url'); ?>/img/welcome-image@large.png, large]" alt="">
+                                    <?php
+                                        $attachment_id = get_field('imagem_sobre');
+                                        $imagem = wp_get_attachment_image_src( $attachment_id, 'quem-somos' );
+                                    ?>
+									<img src="<?php echo $imagem[0]; ?>" data-interchange="[<?php echo $imagem[0]; ?>, small], [<?php echo $imagem[0]; ?>, medium], [<?php echo $imagem[0]; ?>, large]" alt="">
 								</figure>
 							</div><!-- /end .column-->
 
@@ -159,17 +190,7 @@
 										<h2 class="s-headline"> Bem-vindo<span class="s-headline-decor"></span></h2>
 									</header>
 
-									<p class="gray-color">Conheçam a Transfer Brasil, especializada em transfer aeroporto-hotel-aeroporto.</p>
-									<p class="gray-color">Chegar num outro país, muitas vezes sem falar o idioma, sem saber como chegar até o seu hotel - o que escolher? Taxi? Transfers na porta do Aeroporto?</p>
-                                    <p class="gray-color">Que nada, vá do hotel para o aeroporto com a Transfer Brasil! Voce bem recebido, sempre!!! Nossa equipe estará te esperando de braços abertos. </p>
-                                    <p class="gray-color">Nossa prioridade é o seu conforto, a sua segurança e uma recepção de qualidade!!!</p>
-
-									<figure class="signature">
-										<figcaption>
-											<p class="h6 author">Vânia Ortega</p>
-											<p class="position">Diretora</p>
-										</figcaption>
-									</figure>
+									<?php the_field('texto_sobre'); ?>
 
 									<footer class="s-footer">
 										<a class="button rh-button-simple left-vb" href="#">
@@ -188,446 +209,92 @@
 					</div><!-- /end .s-trapeze-edges-inner -->
 				</div><!-- /end .s-trapeze-edges -->
 
-				<!-- ===== PRODUCT CARDS CAROUSEL ===== -->
+				
+                    
+                    <!-- ===== SECTION "FLEET" ===== -->
 
-				<section class="section section s-line s-cards-carousel">
-					<div class="row align-center">
-						<div class="column small-12 medium-8 large-5">
-							<header class="s-header align-center">
-								<h2 class="s-headline">Nossos veículos<span class="s-headline-decor"></span></h2>
-								<p class="subheader">Consequuntur provident aliquam exercitationem deserunt ex quia, quas incidunt nostrum soluta temporibus.</p>
+				<div class="s-trapeze-edges s-fleet">
+					<div class="s-trapeze-edges-inner">
+						<section class="section s-line">
+
+							<header class="s-header row align-center">
+								<div class="column small-12 medium-8 large-5">
+									<h2 class="s-headline">Nossos Veículos<span class="s-headline-decor"></span></h2>
+								</div>
 							</header>
-						</div>
-						<div class="column small-12">
-							<div class="owl-carousel" data-owl-carousel data-button-type="rh-buttons" data-button-color="secondary secondary-gray" data-owl-options='{"smartSpeed": "500","dotsClass": "rh-owl-dots dots-dark", "responsive": {"640": {"items": "2", "slideBy": "2", "dots": false, "nav": "true"}, "1024": {"items": "3", "slideBy": "3", "dots": false, "nav": "true"}}}'>
 
-								<!-- Card product -->
-								<div class="card card-product bg-secondary block-shadow">
+							<div class="gallery rh-gallery">
+                                <?php if(have_rows('lista_veiculos')) : while(have_rows('lista_veiculos')) : the_row(); ?>
+								<!-- Fleet gallery item #1 -->
+								<div class="gallery-item image-hover">
 
-									<div class="card-divider">
-										<h3 class="h3 headline">Nome do veículo</h3>
+									<!-- Image-->
+                                    <?php
+                                        $attachment_id = get_sub_field('imagem');
+                                        $imagem = wp_get_attachment_image_src( $attachment_id, 'veiculos' );
+                                        $full = wp_get_attachment_image_src( $attachment_id, 'veiculos-grande' );
+                                    ?>
+									<div class="gallery-image">
+										<div class="grayscale" data-interchange="[<?php echo $imagem[0]; ?>, small]"></div>
 									</div>
 
-									<div class="card-section card-product-data flex-container align-justify">
-
-										<div class="price-wrap">
-											<div class="price">
-												<ul class="rating text-center">
-													<li><i class="zmdi zmdi-star fa fa-star primary-color"></i></li>
-													<li><i class="zmdi zmdi-star fa fa-star primary-color"></i></li>
-													<li><i class="zmdi zmdi-star fa fa-star primary-color"></i></li>
-													<li><i class="zmdi zmdi-star fa fa-star primary-color"></i></li>
-													<li><i class="zmdi zmdi-star fa fa-star gray-shade-color"></i></li>
-												</ul>
-											</div>
-										</div><!-- /end .price-wrap -->
-
-										<ul class="card-product-features">
-											<li><i class="zmdi zmdi-male-alt zmdi-hc-fw fa fa-male fa-fw"></i>X 3</li>
-											<li><i class="zmdi zmdi-gas-station zmdi-hc-fw fa fa-tint fa-fw"></i>diesel</li>
-											<li><i class="zmdi zmdi-settings zmdi-hc-fw fa fa-gear fa-fw"></i>outra info</li>
-										</ul>
-									</div><!-- /end .card-product-data -->
-
-									<img src="<?php bloginfo('template_url'); ?>/img/fleet/card-product-14.jpg" alt="">
-
-									<div class="card-section text-center">
-										<a class="button rh-button flip-y" href="#"><i class="zmdi zmdi-info"></i>
-											<span>Detalhes</span>
+									<div class="image-hover-buttons">
+										<!-- Show large image-->
+										<a class="button rh-button-simple left-vb small secondary-white" href="<?php echo $full[0]; ?>" data-rel="lightcase:fleetGallery">
+											<i class="zmdi zmdi-zoom-in fa fa-search-plus"></i>
 										</a>
-									</div>
-								</div><!-- /end .card-product -->
+										<!-- Show vehicle card-->
+									</div><!-- /end .image-hover-buttons -->
 
-								<!-- Card product -->
-								<div class="card card-product block-shadow">
-
-									<div class="card-divider bg-white">
-										<h3 class="h3 headline">Nome do veículo</h3>
-									</div>
-
-									<div class="card-section card-product-data flex-container align-justify">
-
-										<div class="price-wrap">
-											<div class="price">
-												<ul class="rating text-center">
-													<li><i class="zmdi zmdi-star fa fa-star primary-color"></i></li>
-													<li><i class="zmdi zmdi-star fa fa-star primary-color"></i></li>
-													<li><i class="zmdi zmdi-star fa fa-star primary-color"></i></li>
-													<li><i class="zmdi zmdi-star fa fa-star primary-color"></i></li>
-													<li><i class="zmdi zmdi-star fa fa-star primary-color"></i></li>
-												</ul>
-											</div>
-										</div><!-- /end .price-wrap -->
-
-										<ul class="card-product-features">
-											<li><i class="zmdi zmdi-male-alt zmdi-hc-fw fa fa-male fa-fw"></i>X 3</li>
-											<li><i class="zmdi zmdi-gas-station zmdi-hc-fw fa fa-tint fa-fw"></i>diesel</li>
-											<li><i class="zmdi zmdi-settings zmdi-hc-fw fa fa-gear fa-fw"></i>outra info</li>
-										</ul>
-									</div><!-- /end .card-product-data -->
-
-									<img src="<?php bloginfo('template_url'); ?>/img/fleet/card-product-22.jpg" alt="">
-
-									<div class="card-section text-center">
-										<a class="button rh-button flip-y" href="#"><i class="zmdi zmdi-info"></i>
-											<span>Detalhes</span>
-										</a>
-									</div>
-								</div><!-- /end .card-product -->
-
-								<!-- Card product -->
-								<div class="card card-product bg-secondary block-shadow">
-
-									<div class="card-divider">
-										<h3 class="h3 headline">Nome do veículo</h3>
-									</div>
-
-									<div class="card-section card-product-data flex-container align-justify">
-
-										<div class="price-wrap">
-											<div class="price">
-												
-
-												<ul class="rating text-center">
-													<li><i class="zmdi zmdi-star fa fa-star primary-color"></i></li>
-													<li><i class="zmdi zmdi-star fa fa-star primary-color"></i></li>
-													<li><i class="zmdi zmdi-star fa fa-star primary-color"></i></li>
-													<li><i class="zmdi zmdi-star fa fa-star primary-color"></i></li>
-													<li><i class="zmdi zmdi-star fa fa-star primary-color"></i></li>
-												</ul>
-											</div>
-										</div><!-- /end .price-wrap -->
-
-										<ul class="card-product-features">
-											<li><i class="zmdi zmdi-male-alt zmdi-hc-fw fa fa-male fa-fw"></i>X 3</li>
-											<li><i class="zmdi zmdi-gas-station zmdi-hc-fw fa fa-tint fa-fw"></i>diesel</li>
-											<li><i class="zmdi zmdi-settings zmdi-hc-fw fa fa-gear fa-fw"></i>outra info</li>
-										</ul>
-									</div><!-- /end .card-product-data -->
-
-									<img src="<?php bloginfo('template_url'); ?>/img/fleet/card-product-03.jpg" alt="">
-
-									<div class="card-section text-center">
-										<a class="button rh-button flip-y" href="fleet-details-right-sidebar.html">
-											<i class="zmdi zmdi-info"></i>
-											<span>Detalhes</span>
-										</a>
-									</div>
-								</div><!-- /end .card-product -->
+									
+								</div><!-- /end .gallery-item -->
+                                <?php endwhile; endif; ?>
 								
-								<!-- Card product -->
-								<div class="card card-product bg-secondary block-shadow">
+							</div><!-- /end .gallery.rh-gallery -->
 
-									<div class="card-divider">
-										<h3 class="h3 headline">Nome do veículo</h3>
-									</div>
+		
 
-									<div class="card-section card-product-data flex-container align-justify">
+						</section><!-- /end .section -->
+					</div><!-- /end .s-trapeze-edges-inner -->
+				</div><!-- /end .s-trapeze-edges.s-fleet -->
 
-										<div class="price-wrap">
-											<div class="price">
-												<ul class="rating text-center">
-													<li><i class="zmdi zmdi-star fa fa-star primary-color"></i></li>
-													<li><i class="zmdi zmdi-star fa fa-star primary-color"></i></li>
-													<li><i class="zmdi zmdi-star fa fa-star primary-color"></i></li>
-													<li><i class="zmdi zmdi-star fa fa-star primary-color"></i></li>
-													<li><i class="zmdi zmdi-star fa fa-star gray-shade-color"></i></li>
-												</ul>
-											</div>
-										</div><!-- /end .price-wrap -->
+				<!-- ===== SECTION-TRAPEZE ===== -->
 
-										<ul class="card-product-features">
-											<li><i class="zmdi zmdi-male-alt zmdi-hc-fw fa fa-male fa-fw"></i>X 3</li>
-											<li><i class="zmdi zmdi-gas-station zmdi-hc-fw fa fa-tint fa-fw"></i>diesel</li>
-											<li><i class="zmdi zmdi-settings zmdi-hc-fw fa fa-gear fa-fw"></i>outra info</li>
-										</ul>
-									</div><!-- /end .card-product-data -->
 
-									<img src="<?php bloginfo('template_url'); ?>/img/fleet/card-product-14.jpg" alt="">
+                    <!-- ===== SECTION "OUR TEAM" ===== -->
 
-									<div class="card-section text-center">
-										<a class="button rh-button flip-y" href="#"><i class="zmdi zmdi-info"></i>
-											<span>Detalhes</span>
-										</a>
-									</div>
-								</div><!-- /end .card-product -->
-
-								<!-- Card product -->
-								<div class="card card-product block-shadow">
-
-									<div class="card-divider bg-white">
-										<h3 class="h3 headline">Nome do veículo</h3>
-									</div>
-
-									<div class="card-section card-product-data flex-container align-justify">
-
-										<div class="price-wrap">
-											<div class="price">
-												<ul class="rating text-center">
-													<li><i class="zmdi zmdi-star fa fa-star primary-color"></i></li>
-													<li><i class="zmdi zmdi-star fa fa-star primary-color"></i></li>
-													<li><i class="zmdi zmdi-star fa fa-star primary-color"></i></li>
-													<li><i class="zmdi zmdi-star fa fa-star primary-color"></i></li>
-													<li><i class="zmdi zmdi-star fa fa-star primary-color"></i></li>
-												</ul>
-											</div>
-										</div><!-- /end .price-wrap -->
-
-										<ul class="card-product-features">
-											<li><i class="zmdi zmdi-male-alt zmdi-hc-fw fa fa-male fa-fw"></i>X 3</li>
-											<li><i class="zmdi zmdi-gas-station zmdi-hc-fw fa fa-tint fa-fw"></i>diesel</li>
-											<li><i class="zmdi zmdi-settings zmdi-hc-fw fa fa-gear fa-fw"></i>outra info</li>
-										</ul>
-									</div><!-- /end .card-product-data -->
-
-									<img src="<?php bloginfo('template_url'); ?>/img/fleet/card-product-22.jpg" alt="">
-
-									<div class="card-section text-center">
-										<a class="button rh-button flip-y" href="#"><i class="zmdi zmdi-info"></i>
-											<span>Detalhes</span>
-										</a>
-									</div>
-								</div><!-- /end .card-product -->
-
-								<!-- Card product -->
-								<div class="card card-product bg-secondary block-shadow">
-
-									<div class="card-divider">
-										<h3 class="h3 headline">Nome do veículo</h3>
-									</div>
-
-									<div class="card-section card-product-data flex-container align-justify">
-
-										<div class="price-wrap">
-											<div class="price">
-												
-
-												<ul class="rating text-center">
-													<li><i class="zmdi zmdi-star fa fa-star primary-color"></i></li>
-													<li><i class="zmdi zmdi-star fa fa-star primary-color"></i></li>
-													<li><i class="zmdi zmdi-star fa fa-star primary-color"></i></li>
-													<li><i class="zmdi zmdi-star fa fa-star primary-color"></i></li>
-													<li><i class="zmdi zmdi-star fa fa-star primary-color"></i></li>
-												</ul>
-											</div>
-										</div><!-- /end .price-wrap -->
-
-										<ul class="card-product-features">
-											<li><i class="zmdi zmdi-male-alt zmdi-hc-fw fa fa-male fa-fw"></i>X 3</li>
-											<li><i class="zmdi zmdi-gas-station zmdi-hc-fw fa fa-tint fa-fw"></i>diesel</li>
-											<li><i class="zmdi zmdi-settings zmdi-hc-fw fa fa-gear fa-fw"></i>outra info</li>
-										</ul>
-									</div><!-- /end .card-product-data -->
-
-									<img src="<?php bloginfo('template_url'); ?>/img/fleet/card-product-03.jpg" alt="">
-
-									<div class="card-section text-center">
-										<a class="button rh-button flip-y" href="fleet-details-right-sidebar.html">
-											<i class="zmdi zmdi-info"></i>
-											<span>Detalhes</span>
-										</a>
-									</div>
-								</div><!-- /end .card-product -->
-
-								
-
-							</div><!-- /end .owl-carousel -->
-						</div><!-- /end .column -->
-					</div><!-- /end .row -->
-				</section>
-
-				<!-- ===== FULL WIDTH SECTION WITH EQUAL PADDINGS ===== -->
-
-				<!-- ===== SECTION "SERVICES" ===== -->
-
-				<div class="s-trapeze bg-secondary-shade">
-
-					<!-- section background image -->
-					<div class="s-trapeze-img" data-interchange="[<?php bloginfo('template_url'); ?>/img/services/s-trapeze-img-01.jpg, large]"></div>
-					<div class="s-trapeze-cover"><div class="s-trapeze-cover-inner"></div></div>
-
-					<section class="section s-line-secondary">
+					<section class="section" style="padding-top: 0;">
 						<div class="row">
-
 							<div class="column small-12">
-								<header class="s-header">
-									<h2 class="s-headline">Serviços<span class="s-headline-decor"></span></h2>
-									<p class="subheader">Nostrum impedit rem, distinctio enim vel libero expedita inventore, ducimus cumque eligendi veniam tempore corporis hic recusandae</p>
+								<header class="s-header align-center">
+									<h2 class="s-headline"> <span class="mark">Nossa</span>Equipe<span class="s-headline-decor"></span></h2>
 								</header>
 							</div>
-
-							<div class="column small-12 medium-6 large-7 large-order-1 services-buttons-column">
-
-								<!-- Service item buttons-->
-								<ul class="row small-up-1 large-up-2" id="js-services-button-list" data-link-class="js-services-button" data-panel-class="js-services-item" data-responsive-accordion-tabs="accordion medium-tabs" data-allow-all-closed="true">
-
-									<li class="column js-services-button">
-										<a class="media-object media-button" href="#js-services-item-1">
-											<div class="media-object-section"><i class="icon rh rh-van-pass-s rh-fw"></i></div>
-											<div class="media-object-section">
-												<h3 class="h3">Título do Serviço</h3>
-											</div>
-										</a>
-									</li>
-
-									<li class="column js-services-button">
-										<a class="media-object media-button" href="#js-services-item-2">
-											<div class="media-object-section"><i class="icon rh rh-van"></i></div>
-											<div class="media-object-section">
-												<h3 class="h3">Título do Serviço</h3>
-											</div>
-										</a>
-									</li>
-
-									<li class="column js-services-button">
-										<a class="media-object media-button" href="#js-services-item-3">
-											<div class="media-object-section"><i class="icon rh rh-van-combo-s rh-fw"></i></div>
-											<div class="media-object-section">
-												<h3 class="h3">Título do Serviço</h3>
-											</div>
-										</a>
-									</li>
-
-									<li class="column js-services-button">
-										<a class="media-object media-button" href="#js-services-item-4">
-											<div class="media-object-section"><i class="icon rh rh-van-s rh-fw"></i></div>
-											<div class="media-object-section">
-												<h3 class="h3">Título do Serviço</h3>
-											</div>
-										</a>
-									</li>
-
-									<li class="column js-services-button">
-										<a class="media-object media-button" href="#js-services-item-5">
-											<div class="media-object-section"><i class="icon rh rh-van-pass rh-fw"></i></div>
-											<div class="media-object-section">
-												<h3 class="h3">Título do Serviço</h3>
-											</div>
-										</a>
-									</li>
-
-									<li class="column js-services-button">
-										<a class="media-object media-button" href="#js-services-item-6">
-											<div class="media-object-section"><i class="icon rh rh-van rh-fw"></i></div>
-											<div class="media-object-section">
-												<h3 class="h3">Título do Serviço</h3>
-											</div>
-										</a>
-									</li>
-
-								</ul><!-- /end #js-services-button-list -->
-							</div><!-- /end .column -->
-
-							<div class="column small-12 medium-6 large-5 show-for-medium large-order-2 services-list-column">
-
-								<!-- Service cards container-->
-								<div id="js-services-list" data-tabs-content="js-services-button-list">
-
-									<div class="js-services-item card card-post services-item" id="js-services-item-1">
-										<div class="card-media">
-											<img class="grayscale" src="<?php bloginfo('template_url'); ?>/img/services/services-01.jpg" alt="">
-										</div>
-										<div class="card-section">
-											<p>Inventore earum dignissimos, eaque hic vero quod, tenetur consectetur beatae excepturi, rerum fugit repudiandae esse quidem error.</p>
-										</div>
-										<div class="card-section align-center p0">
-											<a class="button rh-button flip-y" href="services-single-page.html">
-												<i class="zmdi zmdi-wrench fa fa-wrench"></i>
-												<span>More about service</span>
-											</a>
-										</div>
-									</div><!-- /end .services-item -->
-
-									<div class="js-services-item card card-post services-item" id="js-services-item-2">
-										<div class="card-media">
-											<img class="grayscale" src="<?php bloginfo('template_url'); ?>/img/services/services-02.jpg" alt="">
-										</div>
-										<div class="card-section">
-											<p>Eveniet dignissimos, architecto? Quas minus sunt, dolorem, laudantium, labore iusto quam itaque maiores explicabo eveniet incidunt accusantium?</p>
-										</div>
-										<div class="card-section align-center p0">
-											<a class="button rh-button flip-y" href="services-single-page.html">
-												<i class="zmdi zmdi-wrench fa fa-wrench"></i>
-												<span>More about service</span>
-											</a>
-										</div>
-									</div><!-- /end .services-item -->
-
-									<div class="js-services-item card card-post services-item" id="js-services-item-3">
-										<div class="card-media">
-											<img class="grayscale" src="<?php bloginfo('template_url'); ?>/img/services/services-03.jpg" alt="">
-										</div>
-										<div class="card-section">
-											<p>Hic sunt expedita pariatur, voluptatibus rem tenetur deleniti quas officiis impedit sapiente doloribus molestias nihil eos ex.</p>
-										</div>
-										<div class="card-section align-center p0">
-											<a class="button rh-button flip-y" href="services-single-page.html">
-												<i class="zmdi zmdi-wrench fa fa-wrench"></i>
-												<span>More about service</span>
-											</a>
-										</div>
-									</div><!-- /end .services-item -->
-
-									<div class="js-services-item card card-post services-item" id="js-services-item-4">
-										<div class="card-media">
-											<img class="grayscale" src="<?php bloginfo('template_url'); ?>/img/services/services-04.jpg" alt="">
-										</div>
-										<div class="card-section">
-											<p>Ipsa sit est ad minima debitis tempora mollitia magni, necessitatibus natus suscipit maxime libero quisquam numquam a.</p>
-										</div>
-										<div class="card-section align-center p0">
-											<a class="button rh-button flip-y" href="services-single-page.html">
-												<i class="zmdi zmdi-wrench fa fa-wrench"></i>
-												<span>More about service</span>
-											</a>
-										</div>
-									</div><!-- /end .services-item -->
-
-									<div class="js-services-item card card-post services-item" id="js-services-item-5">
-										<div class="card-media">
-											<img class="grayscale" src="<?php bloginfo('template_url'); ?>/img/services/services-05.jpg" alt="">
-										</div>
-										<div class="card-section">
-											<p>Nihil repudiandae deleniti laboriosam eligendi iure nesciunt velit aspernatur hic corporis, enim ullam quaerat illum labore molestiae.</p>
-										</div>
-										<div class="card-section align-center p0">
-											<a class="button rh-button flip-y" href="services-single-page.html">
-												<i class="zmdi zmdi-wrench fa fa-wrench"></i>
-												<span>More about service</span>
-											</a>
-										</div>
-									</div><!-- /end .services-item -->
-
-									<div class="js-services-item card card-post services-item" id="js-services-item-6">
-										<div class="card-media">
-											<img class="grayscale" src="<?php bloginfo('template_url'); ?>/img/services/services-06.jpg" alt="">
-										</div>
-										<div class="card-section">
-											<p>Eius perferendis sequi aut assumenda. Sunt, expedita ea quo. Molestias, cum enim nisi odio harum labore minima.</p>
-										</div>
-										<div class="card-section align-center p0">
-											<a class="button rh-button flip-y" href="services-single-page.html">
-												<i class="zmdi zmdi-wrench fa fa-wrench"></i>
-												<span>More about service</span>
-											</a>
-										</div>
-									</div><!-- /end .services-item -->
-
-								</div><!-- /end #js-services-list-->
-
-							</div><!-- /end .column -->
 						</div>
+						<div class="row small-up-1 medium-up-4 large-up-5 owl-carousel dots-dark" data-carousel="medium-down" data-owl-options='{"responsive": { "0": { "items": "1"}, "640": { "items": "2" },"768": { "items": "3" },"960": { "items": "4" }}}'>
+                            <?php if(have_rows('lista_equipe')) : while(have_rows('lista_equipe')) : the_row(); ?>
+							<div class="column">
+								<article class="card card-team card-slide block-shadow">
+                                    <?php
+                                        $attachment_id = get_sub_field('foto');
+                                        $imagem = wp_get_attachment_image_src( $attachment_id, 'equipe' );
+                                    ?>
+									<img class="grayscale" src="<?php echo $imagem[0]; ?>" alt="<?php the_sub_field('nome'); ?>">
+									<div class="card-divider">
+										<h4 class="h5"><?php the_sub_field('nome'); ?></h4>
+										<p class="subheader"><?php the_sub_field('cargo'); ?></p>
+									</div>
+								</article>
+							</div><!-- /end .column -->
+                            <?php endwhile; endif; ?>
+                            
 
-						<footer class="s-footer row">
-							<div class="column small-12 large-7 text-center">
-								<a class="button rh-button " href="services-cards.html"><i class="rh rh-van-combo-s rh-fw"></i>
-									<span>Faça sua reserva</span>
-								</a>
-							</div>
-						</footer>
 
+						</div><!-- /end .row -->
 					</section><!-- /end .section -->
-				</div><!-- /end .s-trapeze -->
+
+			
+			
 
 				
 
@@ -656,227 +323,7 @@
 					</div>
 				</div><!-- /end .section-boxed.s-equal-paddings -->
 
-				<!-- ===== SECTION "FLEET" ===== -->
-
-				<div class="s-trapeze-edges s-fleet">
-					<div class="s-trapeze-edges-inner">
-						<section class="section s-line">
-
-							<header class="s-header row align-center">
-								<div class="column small-12 medium-8 large-5">
-									<h2 class="s-headline">Galeria de Fotos<span class="s-headline-decor"></span></h2>
-									<p class="subheader">Blanditiis facilis debitis velit quibusdam sapiente recusandae cupiditate quo labore maxime? Deserunt officiis natus iusto quam dolore nulla et facilis nisi aliquid, distinctio facere placeat velit provident!
-									</p>
-								</div>
-							</header>
-
-							<div class="gallery rh-gallery">
-
-								<!-- Fleet gallery item #1 -->
-								<div class="gallery-item image-hover image-hover-moving">
-
-									<!-- Image-->
-									<div class="gallery-image">
-										<div class="grayscale" data-interchange="[<?php bloginfo('template_url'); ?>/img/gallery/gallery-01.jpg, small]"></div>
-									</div>
-
-									<!-- Caption-->
-									<div class="gallery-image-caption">
-										<h3 class="h4 title">Título da Foto</h3>
-									</div>
-
-									<div class="image-hover-buttons">
-										<!-- Show large image-->
-										<a class="button rh-button-simple left-vb small secondary-white" href="img/gallery/gallery-01@lightbox.jpg" data-rel="lightcase:fleetGallery" title="Vehicle image #1 title">
-											<i class="zmdi zmdi-zoom-in fa fa-search-plus"></i>
-										</a>
-										<!-- Show vehicle card-->
-									</div><!-- /end .image-hover-buttons -->
-
-									
-								</div><!-- /end .gallery-item -->
-
-								<!-- Fleet gallery item #2 -->
-								<div class="gallery-item image-hover image-hover-moving">
-
-									<!-- Image-->
-									<div class="gallery-image">
-										<div class="grayscale" data-interchange="[<?php bloginfo('template_url'); ?>/img/gallery/gallery-02.jpg, small]"></div>
-									</div>
-
-									<!-- Caption-->
-									<div class="gallery-image-caption">
-										<h3 class="h4 title">Título da Foto</h3>
-									</div>
-
-									<div class="image-hover-buttons">
-										<!-- Show large image-->
-										<a class="button rh-button-simple left-vb small secondary-white" href="img/gallery/gallery-02@lightbox.jpg" data-rel="lightcase:fleetGallery"
-										title="Vehicle image #2 title">
-											<i class="zmdi zmdi-zoom-in fa fa-search-plus"></i>
-										</a>
-					
-									</div><!-- /end .image-hover-buttons -->
-
-								
-								</div><!-- /end .gallery-item -->
-
-								<!-- Fleet gallery item #3 -->
-								<div class="gallery-item image-hover image-hover-moving">
-
-									<!-- Image-->
-									<div class="gallery-image">
-										<div class="grayscale" data-interchange="[<?php bloginfo('template_url'); ?>/img/gallery/gallery-03.jpg, small]"></div>
-									</div>
-
-									<!-- Caption-->
-									<div class="gallery-image-caption">
-										<h3 class="h4 title">Título da Foto</h3>
-									</div>
-
-									<div class="image-hover-buttons">
-										<!-- Show large image-->
-										<a class="button rh-button-simple left-vb small secondary-white" href="img/gallery/gallery-03@lightbox.jpg" data-rel="lightcase:fleetGallery"
-										title="Vehicle image #3 title">
-											<i class="zmdi zmdi-zoom-in fa fa-search-plus"></i>
-										</a>
-							
-									</div><!-- /end .image-hover-buttons -->
-
-							
-								</div><!-- /end .gallery-item -->
-
-								<!-- Fleet gallery item #4 -->
-								<div class="gallery-item image-hover image-hover-moving">
-
-									<!-- Image-->
-									<div class="gallery-image">
-										<div class="grayscale" data-interchange="[<?php bloginfo('template_url'); ?>/img/gallery/gallery-04.jpg, small]"></div>
-									</div>
-
-									<!-- Caption-->
-									<div class="gallery-image-caption">
-										<h3 class="h4 title">Título da Foto</h3>
-									</div>
-
-									<div class="image-hover-buttons">
-										<!-- Show large image-->
-										<a class="button rh-button-simple left-vb small secondary-white" href="img/gallery/gallery-04@lightbox.jpg" data-rel="lightcase:fleetGallery"
-										title="Vehicle image #4 title">
-											<i class="zmdi zmdi-zoom-in fa fa-search-plus"></i>
-										</a>
-									
-									</div><!-- /end .image-hover-buttons -->
-
-			
-								</div><!-- /end .gallery-item -->
-
-								<!-- Fleet gallery item #5 -->
-								<div class="gallery-item image-hover image-hover-moving">
-
-									<!-- Image-->
-									<div class="gallery-image">
-										<div class="grayscale" data-interchange="[<?php bloginfo('template_url'); ?>/img/gallery/gallery-05.jpg, small]"></div>
-									</div>
-
-									<!-- Caption-->
-									<div class="gallery-image-caption">
-										<h3 class="h4 title">Título da Foto</h3>
-									</div>
-
-									<div class="image-hover-buttons">
-										<!-- Show large image-->
-										<a class="button rh-button-simple left-vb small secondary-white" href="img/gallery/gallery-05@lightbox.jpg" data-rel="lightcase:fleetGallery" title="Vehicle image #5 title">
-											<i class="zmdi zmdi-zoom-in fa fa-search-plus"></i>
-										</a>
-										<!-- Show vehicle card-->
-										
-									</div>
-
-							
-								</div><!-- /end .gallery-item -->
-
-								<!-- Fleet gallery item #6 -->
-								<div class="gallery-item image-hover image-hover-moving">
-
-									<!-- Image-->
-									<div class="gallery-image">
-										<div class="grayscale" data-interchange="[<?php bloginfo('template_url'); ?>/img/gallery/gallery-06.jpg, small]"></div>
-									</div>
-
-									<!-- Caption-->
-									<div class="gallery-image-caption">
-										<h3 class="h4 title">Título da Foto</h3>
-									</div>
-
-									<div class="image-hover-buttons">
-										<!-- Show large image-->
-										<a class="button rh-button-simple left-vb small secondary-white" href="img/gallery/gallery-06@lightbox.jpg" data-rel="lightcase:fleetGallery"
-										title="Vehicle image #6 title">
-											<i class="zmdi zmdi-zoom-in fa fa-search-plus"></i>
-										</a>
-						
-									</div><!-- /end .image-hover-buttons -->
-
-								</div><!-- /end .gallery-item -->
-
-								<!-- Fleet gallery item #7 -->
-								<div class="gallery-item image-hover image-hover-moving">
-
-									<!-- Image-->
-									<div class="gallery-image">
-										<div class="grayscale" data-interchange="[<?php bloginfo('template_url'); ?>/img/gallery/gallery-07.jpg, small]"></div>
-									</div>
-
-									<!-- Caption-->
-									<div class="gallery-image-caption">
-										<h3 class="h4 title">Título da Foto</h3>
-									</div>
-
-									<div class="image-hover-buttons">
-										<!-- Show large image-->
-										<a class="button rh-button-simple left-vb small secondary-white" href="img/gallery/gallery-07@lightbox.jpg" data-rel="lightcase:fleetGallery" title="Vehicle image #7 title">
-											<i class="zmdi zmdi-zoom-in fa fa-search-plus"></i>
-										</a>
-							
-									</div><!-- /end .image-hover-buttons -->
-
-								</div><!-- /end .gallery-item -->
-
-								<!-- Fleet gallery item #8 -->
-								<div class="gallery-item image-hover image-hover-moving">
-
-									<!-- Image-->
-									<div class="gallery-image">
-										<div class="grayscale" data-interchange="[<?php bloginfo('template_url'); ?>/img/gallery/gallery-08.jpg, small]"></div>
-									</div>
-
-									<!-- Caption-->
-									<div class="gallery-image-caption">
-										<h3 class="h4 title">Título da Foto</h3>
-									</div>
-
-									<div class="image-hover-buttons">
-										<!-- Show large image-->
-										<a class="button rh-button-simple left-vb small secondary-white" href="img/gallery/gallery-08@lightbox.jpg" data-rel="lightcase:fleetGallery" title="Vehicle image #8 title">
-											<i class="zmdi zmdi-zoom-in fa fa-search-plus"></i>
-										</a>
-										<!-- Show vehicle card-->
-										
-									</div><!-- /end .image-hover-buttons -->
-
-		
-								</div><!-- /end .gallery-item -->
-
-							</div><!-- /end .gallery.rh-gallery -->
-
-		
-
-						</section><!-- /end .section -->
-					</div><!-- /end .s-trapeze-edges-inner -->
-				</div><!-- /end .s-trapeze-edges.s-fleet -->
-
-				<!-- ===== SECTION-TRAPEZE ===== -->
+				
 
 				<div class="section-trapeze primary">
 					<div class="trapeze bg-primary">
@@ -884,15 +331,19 @@
 						<div class="row small-up-1 medium-up-2">
 
 							<figure class="column align-middle">
-								<img src="<?php bloginfo('template_url'); ?>/img/trapeze-banner@medium.png" data-interchange="[<?php bloginfo('template_url'); ?>/img/trapeze-banner@small.png, small], [<?php bloginfo('template_url'); ?>/img/trapeze-banner@medium.png, medium]" alt="">
+                                <?php
+                                    $attachment_id = get_field('foto_destaque');
+                                    $imagem = wp_get_attachment_image_src( $attachment_id, 'foto_destaque' );
+                                ?>
+								<img src="<?php echo $imagem[0]; ?>" data-interchange="[<?php echo $imagem[0]; ?>, small], [<?php echo $imagem[0]; ?>, medium]" alt="">
 							</figure>
 
 							<article class="column text-center align-self-middle">
 								<header class="block-header">
-									<h3 class="h3 headline">Aqui podemos inserir uma chamada</h3>
+									<h3 class="h3 headline"><?php the_field('titulo_destaque'); ?></h3>
 								</header>
 
-								<p>Totam, doloremque, excepturi? Rem laudantium, accusantium porro rerum ratione saepe repellat sint! Omnis numquam facilis labore, placeat fuga iste? Quos, odit omnis. Maxime voluptates, veritatis eos ea. Facere sit eum tenetur expedita.</p>
+								<p><?php the_field('texto_destaque'); ?></p>
 
 								<a class="button rh-button secondary mb0" href="#">
 									<i class="zmdi zmdi-mail-send fa fa-paper-plane"></i>
@@ -912,8 +363,6 @@
 					<header class="s-header row align-center">
 						<div class="column small-12 medium-8 large-5">
 							<h2 class="s-headline">Vantagens de resevar conosco<span class="s-headline-decor"></span></h2>
-							<p class="subheader">Obcaecati explicabo dignissimos fuga veritatis quae sequi recusandae possimus eius, iure, quasi voluptatum, veniam sapiente inventore velit!
-							</p>
 						</div>
 					</header>
 
@@ -923,60 +372,27 @@
 						<div class="s-trapeze-2x-image" data-interchange="[<?php bloginfo('template_url'); ?>/img/sections/s-trapeze-2x-bg.jpg, large]"></div>
 
 						<div class="row small-up-1 medium-up-2 large-up-3 owl-carousel" data-carousel="medium-down" data-owl-options='{"smartSpeed": "500","dotsClass": "rh-owl-dots dots-dark"}'>
-
+                            <?php if(have_rows('lista_vantagens')) : while(have_rows('lista_vantagens')) : the_row(); ?>
 							<div class="column">
 								<!-- Icon card #1-->
 								<article class="card card-post-icon block-shadow">
-									<div class="card-media"><img class="grayscale" src="<?php bloginfo('template_url'); ?>/img/cards/card-04.jpg" alt=""></div>
+                                    <?php
+                                        $attachment_id = get_sub_field('imagem');
+                                        $imagem = wp_get_attachment_image_src( $attachment_id, 'destaque' );
+                                    ?>
+									<div class="card-media"><img class="grayscale" src="<?php echo $imagem[0]; ?>" alt=""></div>
 
 									<div class="card-divider bg-verde">
-										<div class="icon-box circle secondary-verde border large"><i class="rh rh-locations"></i></div>
-										<h3 class="h4" data-equalizer-watch="data-equalizer-watch">Transfer In e Out</h3>
+										<div class="icon-box circle secondary-verde border large"><i class="fa <?php the_sub_field('icone'); ?>"></i></div>
+										<h3 class="h4" data-equalizer-watch="data-equalizer-watch"><?php the_sub_field('titulo'); ?></h3>
 									</div>
 
 									<div class="card-section">
-										<p>Fechando o Transfer In e Out você ganha um kit Bienvenido com: Chip de Celular para usar aqui  e guia de dicas e informações de Santiago exclusivo para nossos passageiros.
-										</p>
+										<p><?php the_sub_field('texto'); ?></p>
 									</div>
 								</article><!-- /end .card-post-icon-->
 							</div>
-
-							<div class="column">
-								<!-- Icon card #2-->
-								<article class="card card-post-icon block-shadow">
-									<div class="card-media"><img class="grayscale" src="<?php bloginfo('template_url'); ?>/img/cards/card-05.jpg" alt=""></div>
-
-									<div class="card-divider bg-verde">
-										<div class="icon-box circle secondary-verde border large"><i class="rh rh-tools-c"></i></div>
-										<h3 class="h4" data-equalizer-watch="data-equalizer-watch">Transfer Semicompartilhado</h3>
-									</div>
-
-									<div class="card-section">
-                                        <p>Nossos veículos são semi-privativos, isso significa que voce terá um preço muito mais acessível sem precisar esperar esperar horas até a van encher, como acontece com os transfer compartilhados.</p>
-                                        <p>Operamos somente transfers agendados, você só ira dividir a van caso no mesmo voo que o seu haja algum outro passageiro nosso indo para algum endereço próximo ao seu. Caso contrário voce irá sozinho na van, nós jamais deixamos vocês esperando horas até a van encher, nos jamais ficaremos "pescando" novos passageiros no aeroporto para encher a van!</p>
-										
-									</div>
-								</article><!-- /end .card-post-icon-->
-							</div>
-
-							<div class="column">
-								<!-- Icon card #3-->
-								<article class="card card-post-icon block-shadow">
-									<div class="card-media"><img class="grayscale" src="<?php bloginfo('template_url'); ?>/img/cards/card-06.jpg" alt=""></div>
-
-									<div class="card-divider bg-verde">
-										<div class="icon-box circle secondary-verde border large"><i class="rh rh-money-back"></i></div>
-										<h3 class="h4" data-equalizer-watch="data-equalizer-watch">Pagamento</h3>
-									</div>
-
-									<div class="card-section">
-										
-										<p>O pagamento é feito na chegada e pode ser em reais, pesos ou dólares. </p>
-                                        <p>Câmbio do dia é feito uma média entre o câmbio do aeroporto e da rua Augustina onde tem o melhor cambio.</p>
-										
-									</div>
-								</article><!-- /end .card-post-icon-->
-							</div>
+                            <?php endwhile; endif; ?>
 
 						</div><!-- /end .row -->
 					</div><!-- /end .s-trapeze-2x -->

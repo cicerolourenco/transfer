@@ -29,5 +29,11 @@ function meuAutoLoad($classe)
 	}
 }
 
-//include_once(DIR_ROOT . '_app/lib/PHPMailer/class.phpmailer.php');
+
+// PHP Mailer atualizado
+include_once(DIR_ROOT . '_app/lib/PHPMailer/Exception.php');
+include_once(DIR_ROOT . '_app/lib/PHPMailer/OAuth.php');
+include_once(DIR_ROOT . '_app/lib/PHPMailer/PHPMailer.php');
+include_once(DIR_ROOT . '_app/lib/PHPMailer/POP3.php');
+include_once(DIR_ROOT . '_app/lib/PHPMailer/SMTP.php');
 

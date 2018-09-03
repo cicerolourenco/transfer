@@ -37,4 +37,23 @@ class Bairro extends Registro
 
 		return $opcoes;
 	}
+
+
+
+	
+	public function pode_deletar()
+	{
+		$bool_pode = true;
+
+		if($bool_pode)
+		{
+			$rep = new TRepository('Reserva');
+			$crit = new TCriteria();
+			$crit->add(new TFilter('id_bairro', '=', $this->id));
+
+			if($rep->count($crit)>0) $bool_pode = false;
+		}
+
+		return $bool_pode;
+	}
 }

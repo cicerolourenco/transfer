@@ -16,6 +16,8 @@
                         <a href="<?=DIR_ADM_HTM_ROOT?>logout"><em class="material-icons">exit_to_app</em> Sair</a>
                     </li>
 
+
+
                     <li class="nav-heading ">
                         <span>RESERVAS</span>
                     </li>
@@ -25,9 +27,15 @@
                     <li>
                         <a href="<?=DIR_ADM_HTM_ROOT?>reservas/listar" title="Listar"><em class="material-icons">list</em> Listar reservas</a>
                     </li>
+                    <?php
+                    /*
                     <li>
                         <a href="<?=DIR_ADM_HTM_ROOT?>reservas/editar" title="Inserir"><em class="icon-display fa fa-plus-square-o"></em> Criar reserva</a>
                     </li>
+                    */
+                    ?>
+
+                    
 
                     <li class="nav-heading ">
                         <span>REGIÕES</span>
@@ -44,6 +52,20 @@
                     <li>
                         <a href="<?=DIR_ADM_HTM_ROOT?>regioes/editar-bairro" title="Inserir"><em class="icon-display fa fa-plus-square-o"></em> Inserir bairro</a>
                     </li>
+                    
+
+
+                    <li class="nav-heading ">
+                        <span>PARCEIROS</span>
+                    </li>
+                    <li>
+                        <a href="<?=DIR_ADM_HTM_ROOT?>parceiros/listar" title="Listar"><em class="material-icons">list</em> Listar parceiros</a>
+                    </li>
+                    <li>
+                        <a href="<?=DIR_ADM_HTM_ROOT?>parceiros/editar" title="Inserir"><em class="icon-display fa fa-plus-square-o"></em> Inserir parceiro</a>
+                    </li>
+
+
                     
                     <li class="nav-heading ">
                         <span>USUÁRIOS</span>
