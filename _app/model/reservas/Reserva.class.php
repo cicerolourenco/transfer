@@ -5,6 +5,15 @@ class Reserva extends Registro
 	const TABLENAME = 'reserva';
 
 
+	public function store()
+	{
+		if(!$this->id)
+			$this->hash = md5(rand().$this->nome); // define um hash somente ao criar a reserva
+
+		return parent::store();
+	}
+
+
 	public static function lista($filtros=null, $propriedades=null)
 	{
 		$rep = new TRepository(__CLASS__);
@@ -31,7 +40,7 @@ class Reserva extends Registro
 		foreach ($lista_chegadas as $reserva) 
 		{
 			$reserva->quando_criterio = $reserva->quando_chega;
-			$reserva->tipo = 'chegada';
+			$reserva->tipo_operacao = 'chegada';
 			$lista[] = $reserva;
 		}
 
@@ -45,7 +54,7 @@ class Reserva extends Registro
 		foreach ($lista_partidas as $reserva) 
 		{
 			$reserva->quando_criterio = $reserva->quando_parte;
-			$reserva->tipo = 'partida';
+			$reserva->tipo_operacao = 'partida';
 			$lista[] = $reserva;
 		}
 
@@ -162,7 +171,7 @@ class Reserva extends Registro
 				$objeto->title = $reserva->nome;
 				$objeto->start = $reserva->quando_criterio;
 				$objeto->url = $destino . $reserva->id;
-				$objeto->color = $reserva->tipo=='partida' ? '#900' : '#090';
+				$objeto->color = $reserva->tipo_operacao=='partida' ? '#090' : '#900';
 				$retorno_json[] = $objeto;
 			}
 		}
@@ -199,7 +208,25 @@ class Reserva extends Registro
 	}
 
 
+	/**
+	 * Instancia e retorna uma reserva com o hash informado
+	 * @param string $hash Hash de identificação da reserva no banco
+	 * @return Object | null
+	 */
+	public static function get_by_hash($hash)
+	{
+		$hash = filter_var($hash, FILTER_SANITIZE_STRING);
+		$rep = new TRepository(__CLASS__);
+		$crit = new TCriteria();
+		$crit->add(new TFilter('hash','=', '"' . $hash . '"'));
+		$crit->setProperty('limit', 1);
+		$lista = $rep->load($crit);
 
+		if($lista)
+			return $lista[0];
+		else
+			return null;
+	}
 
 	
 	/**
@@ -236,11 +263,18 @@ class Reserva extends Registro
 			'#bool_duty_free#' => ($this->bool_duty_free ? 'sim' : 'não'),
 			'#preco#' => Utils::formata_num($this->preco, 0),
 			'#indicacao#' => $this->get_indicacao(),
+			'#link_altera#' => $this->get_link_altera(),
 			'#observacoes#' => nl2br($this->observacoes),
 		);
 		
 		return $mail_msg->envia();
 	}	
+
+
+	public function get_link_altera()
+	{
+		return DIR_HTM_ROOT . 'reserva/?h=' . $this->hash;
+	}
 
 
 
@@ -253,7 +287,7 @@ class Reserva extends Registro
 		}
 
 		$sql = 'SELECT r.*, c.nome nome_comuna, b.nome nome_bairro, t.nome tipo_reserva
-				FROM reserva r, comuna c, bairro b, indicacao i, reserva_tipo t
+				FROM reserva r, comuna c, bairro b, reserva_tipo t
 				WHERE c.id=r.id_comuna
 				AND b.id=r.id_bairro
 				AND t.id=r.tiporeserva
@@ -267,7 +301,8 @@ class Reserva extends Registro
 			<thead>
 				<tr>
 				<?php
-				$fields = array_keys($res->fetch(PDO::FETCH_ASSOC));
+				$res_campos = $conn->query($sql);
+				$fields = array_keys($res_campos->fetch(PDO::FETCH_ASSOC));
 				foreach ($fields as $campo) 
 				{
 					?>
@@ -290,7 +325,11 @@ class Reserva extends Registro
 					{
 						if(substr($campo, 0, strlen($prefixo))==$prefixo)
 						{
-							$valor = date('d/m/Y H:i', strtotime($row[$campo]));
+							$valor = $row[$campo]==null ? '' : date('d/m/Y H:i', strtotime($row[$campo]));
+						}
+						elseif($campo=='qtd_pax')
+						{
+							$valor = $row['qtd_adt'] + $row['qtd_chd_5'] + $row['qtd_chd_10'];
 						}
 						else
 						{

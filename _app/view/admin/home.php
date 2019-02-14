@@ -47,7 +47,7 @@
 	                                {
 	                                    ?>
 	                                    <tr>
-	                                    	<td width="20" class="<?=$reserva->tipo?>"><i class="fa fa-circle"></i></td>
+	                                    	<td width="20" class="<?=$reserva->tipo_operacao?>"><i class="fa fa-circle"></i></td>
 	                                        <td>
 	                                            <a href="<?=DIR_ADM_HTM_ROOT?>reservas/editar/<?=$reserva->id?>">
 	                                            	<strong><?=date('d/m H:i', strtotime($reserva->quando_criterio))?></strong>

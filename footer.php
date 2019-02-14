@@ -75,12 +75,9 @@
 
 									<div class="site-footer-section">
 										<h3 class="h5 headline">Cadastre-se</h3>
-										<form class="simple-form form-secondary" data-abide>
-											<div class="input-group">
-												<input class="input-group-field" id="js_subscribe-footer" type="text" placeholder="E-mail" required>
-												<button class="button transparent secondary-white" type="button"><i class="zmdi zmdi-email zmdi-hc-fw fa fa-envelope fa-fw"></i></button>
-											</div>
-										</form>
+										<div class="form-secondary newsletter">
+											<?php echo do_shortcode('[contact-form-7 id="127" title="Newsletter"]'); ?>
+										</div>
 									</div><!-- /end .site-footer-section -->
 
 
@@ -313,7 +310,9 @@
 		<!-- An alternative way to include Google fonts -->
 		<!-- <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>-->
 		<!-- <script>WebFont.load({google: {families: ['Poppins:400,600,700','Lato:400,300,300italic,400italic,700,900']}});</script>-->
+       
         <?php if(is_page('reservas')) : ?>
+         <?php $v_tipos = array(1=>'Ida e volta', 2=>'Somente ida', 3=>'Somente volta'); ?>
          <script>
         var $datePickerDate = $('.js-datepicker-date'),
         $datePickerTime = $('.js-datepicker-time'),
@@ -369,10 +368,10 @@
 		flatpickrInit: function () {
 			var dpDate,	dpTime, $tipoReserva;
             
-            $(".tiporeserva").on('change', function() {                
-                $tipoReserva = $(this).val();
+                       
+                $tipoReserva = '<?php echo $v_tipos[$_POST['tiporeserva']] ?>';
                 
-                if($tipoReserva == "Somente Ida") {
+                if($tipoReserva == "Somente ida") {
                    $chegada.css('display','block');
                    $partida.css('display','none');
                    $partidaInput.removeAttr('required data-invalid');
@@ -381,7 +380,7 @@
                     $chegadaInput.removeClass('is-invalid-input');
                     $partidaInput.removeClass('is-invalid-input');
                     
-                } else if($tipoReserva == "Somente Volta") {
+                } else if($tipoReserva == "Somente volta") {
                    $chegada.css('display','none');
                     $partida.css('display','block');
                     $partidaInput.attr('required data-invalid');
@@ -396,7 +395,7 @@
                     $chegadaInput.removeClass('is-invalid-input');
                     $partidaInput.removeClass('is-invalid-input');
                 }
-            });
+           
            
 
 			if ($datePickerDate.length > 0) {
@@ -419,37 +418,63 @@
 
 			if ($datePickerGroup.length > 0) {
                 
-                dpDate[0].set('minDate', '<?=(Reserva::get_min_date())->format('d-m-Y')?>');
+               dpDate[0].set('minDate', '<?=(Reserva::get_min_date())->format('d-m-Y')?>');
                 dpDate[1].set('minDate', '<?=(Reserva::get_min_date())->format('d-m-Y')?>');
 
-				$datePickerDate.on('focus', function() {
+				/*$datePickerDate.on('focus', function() {
 					if (!$datePickerTime.attr('required') ) {
 						$datePickerTime.prop('required',true);
 					}
-				});
+				});*/
+                if($tipoReserva == "Somente ida") {
+                 
+                    dpDate[0].config.onChange = [function (selectedDates) {
+                        console.log(selectedDates[0]);
+                        dpTime[0].setDate(selectedDates[0]);
+                        dpDate[1].set('minDate', selectedDates[0]);
+                    }];
 
-				dpDate[0].config.onChange = [function (selectedDates) {
-                    console.log(selectedDates[0]);
-					dpTime[0].setDate(selectedDates[0]);
-					dpDate[1].set('minDate', selectedDates[0]);
-				}];
+                    dpDate[0].config.onClose = [function () {
+                        setTimeout(function () {
+                            return dpTime[0].open();
+                        }, 1);
+                    }];
+                } else if($tipoReserva == "Somente volta") {
+                   
+                    dpDate[1].config.onChange = [function (selectedDates) {
+                        dpTime[1].setDate(selectedDates[0]);
+                        dpDate[0].set('maxDate', selectedDates[0]);
+                    }];
 
-				dpDate[0].config.onClose = [function () {
-					setTimeout(function () {
-						return dpTime[0].open();
-					}, 1);
-				}];
+                    dpDate[1].config.onClose = [function () {
+                        setTimeout(function () {
+                            return dpTime[1].open();
+                        }, 1);
+                    }];
+                } else {
+                     
+                   dpDate[0].config.onChange = [function (selectedDates) {
+                        console.log(selectedDates[0]);
+                        dpTime[0].setDate(selectedDates[0]);
+                        dpDate[1].set('minDate', selectedDates[0]);
+                    }];
 
-				dpDate[1].config.onChange = [function (selectedDates) {
-					dpTime[1].setDate(selectedDates[0]);
-					dpDate[0].set('maxDate', selectedDates[0]);
-				}];
+                    dpDate[0].config.onClose = [function () {
+                        setTimeout(function () {
+                            return dpTime[0].open();
+                        }, 1);
+                    }];
+                    dpDate[1].config.onChange = [function (selectedDates) {
+                        dpTime[1].setDate(selectedDates[0]);
+                        dpDate[0].set('maxDate', selectedDates[0]);
+                    }];
 
-				dpDate[1].config.onClose = [function () {
-					setTimeout(function () {
-						return dpTime[1].open();
-					}, 1);
-				}];
+                    dpDate[1].config.onClose = [function () {
+                        setTimeout(function () {
+                            return dpTime[1].open();
+                        }, 1);
+                    }];
+                }
 			}
 		},
 		// ---------------------------------------------------------------------

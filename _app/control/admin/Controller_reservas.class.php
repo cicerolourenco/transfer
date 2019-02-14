@@ -33,17 +33,19 @@ class Controller_reservas extends \Controller
 			if($_POST)
 			{
 				// testando as datas, pra confirmar 
-				$dt_chega = \Utils::str_quando_to_mysql($_POST['quando_chega']);
-				$dt_parte = \Utils::str_quando_to_mysql($_POST['quando_parte']);
+				$dt_chega = $_POST['tiporeserva']==3 ? '' : \Utils::str_quando_to_mysql($_POST['quando_chega']);
+				$dt_parte = $_POST['tiporeserva']==2 ? '' : \Utils::str_quando_to_mysql($_POST['quando_parte']);
 
-				$datetime_chega = new Datetime($dt_chega);
-				$datetime_parte = new Datetime($dt_parte);
+				/*
+				$datetime_chega = new \Datetime($dt_chega);
+				$datetime_parte = new \Datetime($dt_parte);
 				$intervalo = $datetime_parte->diff($datetime_chega);
 
 				if($intervalo<0)
 				{
 					$msg_erro = 'As datas de chegada e partida estão fora da ordem cronológica.';
 				}
+				*/
 
 				if($erro==0)
 				{
@@ -80,9 +82,10 @@ class Controller_reservas extends \Controller
 					$objeto->fromVetor($_POST);
 
 					// testando as datas, pra confirmar 
-					$dt_chega = \Utils::str_quando_to_mysql($_POST['quando_chega']);
-					$dt_parte = \Utils::str_quando_to_mysql($_POST['quando_parte']);
+					$dt_chega = $objeto->tiporeserva==3 ? '' : \Utils::str_quando_to_mysql($_POST['quando_chega']);
+					$dt_parte = $objeto->tiporeserva==2 ? '' : \Utils::str_quando_to_mysql($_POST['quando_parte']);
 
+					/*
 					$datetime_chega = new \Datetime($dt_chega);
 					$datetime_parte = new \Datetime($dt_parte);
 
@@ -91,6 +94,7 @@ class Controller_reservas extends \Controller
 						$erro = 1;
 						$msg_erro = 'As datas de chegada e partida estão fora da ordem cronológica.';
 					}
+					*/
 
 					if($erro==0)
 					{
@@ -116,14 +120,18 @@ class Controller_reservas extends \Controller
 
 				foreach($objeto->toArray() as $chave=>$valor)
 				{
-					if(floor($erro)==0 && ($chave=='quando_chega' || $chave=='quando_parte'))
-						$this->view->assign($chave, date('d/m/Y H:i', strtotime($valor)));
-					elseif(floor($erro)==0 && $chave=='hora_parte_hotel')
-						$this->view->assign($chave, date('H:i', strtotime($valor)));
-					else
+					if(floor($erro)==0 && ($chave=='quando_chega' || $chave=='quando_parte')) {
+						$valor = $valor==null ? '' : date('d/m/Y H:i', strtotime($valor));
 						$this->view->assign($chave, $valor);
+					} elseif(floor($erro)==0 && $chave=='hora_parte_hotel') {
+						$valor = $valor==null ? '' : date('H:i', strtotime($valor));
+						$this->view->assign($chave, $valor);
+					} else {
+						$this->view->assign($chave, $valor);
+					}
 				}
 			}
+			$this->view->assign('objeto', $objeto);
 			$this->view->assign('tipo', $objeto->get_tipo());
 			$this->view->assign('bairro', $objeto->get_bairro());
 			$this->view->assign('indicacao', $objeto->get_indicacao());

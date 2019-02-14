@@ -150,7 +150,7 @@ class Email
 		    $mail->Host = 'smtpout.secureserver.net';  
 		    $mail->Port = 80;								// Na Locaweb, usar: 587. Em outras: 465, 80 ou 25 (confirmar com o servidor)
 		    $mail->Username = 'contato@transferbrasil.cl';
-		    $mail->Password = 'agencia54A$';                           
+		    $mail->Password = 'transfer9155$';                           
 		    $mail->setFrom($this->remetente_email, $this->remetente_nome);
 		    //$mail->addReplyTo('contato@transferbrasil.cl', 'Transfer Brasil');
 

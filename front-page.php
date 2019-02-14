@@ -24,7 +24,7 @@
 									<p class="h4 js-animate-2 slide-in-right mui-enter"><?php the_sub_field('texto'); ?></p>
 
 									<div class="button-group align-center">
-										<a class="button rh-button slide-in-up mui-enter js-animate-3 mui-enter-active" href="<?php bloginfo('url'); ?>/reserva/"><i class="rh rh-van-pass-s rh-fw"></i>
+										<a class="button rh-button slide-in-up mui-enter js-animate-3 mui-enter-active" href="<?php bloginfo('url'); ?>/reservas/"><i class="rh rh-van-pass-s rh-fw"></i>
 											<span>Faça sua reserva!</span>
 										</a>
 									</div>
@@ -47,7 +47,7 @@
 						<div class="trapeze bg-primary overlap-small">
 							<form class="form-primary" id="homepage-booking" method="post" action="<?php bloginfo('url'); ?>/reservas/" data-abide novalidate>
 								<div class="block-header">
-									<h2 class="h3 headline">Faça a reserva do seu transfer!</h2>
+									<h2 class="h3 headline">Faça seu orçamento do Transfer!</h2>
 								</div>
                                 <div class="text-center" style="margin-top: 20px;">
                                     <div class="radio radioreserva">
@@ -81,7 +81,7 @@
 													<select class="input-group-field placeholder" name="qtd_adt" required>
 														<option disabled selected hidden value="">Quantos adultos? (10 anos ou mais)</option>
 														<?php
-														for($i=1; $i<=10; $i++)
+														for($i=1; $i<=30; $i++)
 														{
 															?>
 															<option value="<?=$i?>"><?=$i?></option>
@@ -99,7 +99,7 @@
 													<select class="input-group-field placeholder" name="qtd_chd_5">
 														<option selected value="0">Bebês (0 a 4 anos)</option>
 														<?php
-														for($i=0; $i<=10; $i++)
+														for($i=0; $i<=30; $i++)
 														{
 															?>
 															<option value="<?=$i?>"><?=$i?></option>
@@ -117,7 +117,7 @@
 													<select class="input-group-field placeholder" name="qtd_chd_10">
 														<option selected value="0">Crianças (5 a 9 anos)</option>
 														<?php
-														for($i=0; $i<=10; $i++)
+														for($i=0; $i<=30; $i++)
 														{
 															?>
 															<option value="<?=$i?>"><?=$i?></option>
@@ -129,7 +129,7 @@
 											</label>
 										</div>
 									</div>
-									<div class="row medium-6">
+									<div class="row small-up-1 medium-up-2">
 										<div class="column">
 											<label>
 												<span class="input-group">
@@ -161,7 +161,7 @@
 									<div class="column small-12 medium-12">
 										<button class="button rh-button secondary shadow" type="submit">
 											<i class="zmdi zmdi-mail-send"></i>
-											<span>RESERVAR</span>
+											<span>COTAR</span>
 										</button>
 									</div>
 								</div>
@@ -196,7 +196,7 @@
 										<a class="button rh-button-simple left-vb" href="#">
 											<i class="zmdi zmdi-email-open"></i>
 										</a>
-										<a class="button rh-button secondary-white flip-y right-vb" href="#">
+										<a class="button rh-button secondary-white flip-y right-vb" href="<?php bloginfo('url'); ?>/contato/">
 											<i class="zmdi zmdi-more-vert"></i>
 											<span>ENTRE EM CONTATO</span>
 										</a>
@@ -298,7 +298,7 @@
 
 				
 
-				<div class="section-boxed bg-secondary s-equal-paddings covered" data-interchange="[<?php bloginfo('template_url'); ?>/img/sections/banner-01.jpg, small]">
+				<?php /*<div class="section-boxed bg-secondary s-equal-paddings covered" data-interchange="[<?php bloginfo('template_url'); ?>/img/sections/banner-01.jpg, small]">
 					<div class="row align-center">
 						<div class="column small-12 large-10">
 
@@ -309,19 +309,16 @@
 								</div>
 
 								<div class="media-object-section pb0">
-									<form class="simple-form form-secondary">
-										<div class="input-group">
-											<input class="input-group-field" type="email" placeholder="Insira seu e-mail">
-											<button class="button transparent secondary-white" type="submit"><i class="zmdi zmdi-mail-send fa fa-paper-plane"></i></button>
-										</div>
-									</form>
+									<div class="simple-form form-secondary">
+										<?php echo do_shortcode('[contact-form-7 id="127" title="Newsletter"]'); ?>
+									</div>
 								</div>
 
 							</div>
 
 						</div>
 					</div>
-				</div><!-- /end .section-boxed.s-equal-paddings -->
+				</div><!-- /end .section-boxed.s-equal-paddings -->*/ ?>
 
 				
 
@@ -345,7 +342,7 @@
 
 								<p><?php the_field('texto_destaque'); ?></p>
 
-								<a class="button rh-button secondary mb0" href="#">
+								<a class="button rh-button secondary mb0" href="<?php bloginfo('url'); ?>/reserva/">
 									<i class="zmdi zmdi-mail-send fa fa-paper-plane"></i>
 									<span>Faça sua reserva</span>
 								</a>
@@ -400,7 +397,7 @@
 
 				<!-- ===== COUNTERS SECTION ===== -->
 
-				<div class="is-fixed s-counters bg-secondary s-border" data-counter data-interchange="[<?php bloginfo('template_url'); ?>/img/sections/s-pattern-01.jpg, small]">
+				<?php /*<div class="is-fixed s-counters bg-secondary s-border" data-counter data-interchange="[<?php bloginfo('template_url'); ?>/img/sections/s-pattern-01.jpg, small]">
 					<div class="row small-up-1 medium-up-2 large-up-4 expanded collapse counter secondary">
 
 						<div class="column">
@@ -444,7 +441,7 @@
 						</div>
 
 					</div><!-- /end .row -->
-				</div><!-- /end .s-counters -->
+				</div><!-- /end .s-counters -->*/ ?>
 
 				<!-- ===== SECTION "TESTIMONIALS" ===== -->
 
@@ -462,89 +459,32 @@
 							</header>
 
 							<div class="owl-carousel testimonials" data-owl-carousel data-owl-options='{"smartSpeed": "1200","dotsClass": "rh-owl-dots dots-dark"}'>
+                                <?php query_posts('pagename=depoimentos'); ?>
+                                <?php if(have_posts()) : while(have_posts()) : the_post(); ?>
+                                    <?php if(have_rows('depoimentos')) : while(have_rows('depoimentos')) : the_row(); ?>
+                                    <!-- .testimonials-item -->
+                                    <section class="testimonials-item text-center">
+                                        <i class="icon zmdi zmdi-quote fa fa-quote-right"></i>
 
-								<!-- .testimonials-item -->
-								<section class="testimonials-item text-center">
-									<i class="icon zmdi zmdi-quote fa fa-quote-right"></i>
+                                        <p><?php the_sub_field('texto'); ?></p>
 
-									<p>Odit atque quae dicta dolore error excepturi officiis consequatur tempora, a neque dolor provident quaerat asperiores vero omnis vel ab quam repellendus eveniet, quas rerum beatae sapiente. Ea accusantium temporibus alias eaque delectus saepe
-										obcaecati qui deleniti.</p>
+                                        <div class="testimonials-divider">
+                                            <svg class="testimonials-corner">
+                                                 <use xlink:href='#corner'></use>
+                                            </svg>
+                                        </div>
 
-									<div class="testimonials-divider">
-										<svg class="testimonials-corner">
-											 <use xlink:href='#corner'></use>
-										</svg>
-									</div>
-
-									<div class="testimonials-meta">
-										<div class="media-object align-center">
-											<div class="media-object-section">
-												<div class="rh-thumbnail"><img class="grayscale" src="<?php bloginfo('template_url'); ?>/img/users/user-04.jpg" alt="Jerry Derryl, Baltimore Markets" />
-												</div>
-											</div>
-											<div class="media-object-section">
-												<span class="h5 author">Nome do cliente</span>
-												<span class="company">Brasil/SP</span>
-											</div>
-										</div>
-									</div>
-								</section><!-- /end .testimonials-item -->
-
-								<!-- .testimonials-item -->
-								<section class="testimonials-item text-center">
-									<i class="icon zmdi zmdi-quote fa fa-quote-right"></i>
-
-									<p>Blanditiis porro reprehenderit qui ut itaque modi odio, molestias libero. Autem minus unde quasi sit corporis incidunt quia obcaecati ipsa sapiente saepe voluptas, voluptatibus, dicta explicabo nobis ipsam cupiditate, similique reprehenderit
-										nisi accusamus nihil harum.</p>
-
-									<div class="testimonials-divider">
-										<svg class="testimonials-corner">
-											 <use xlink:href='#corner'></use>
-										</svg>
-									</div>
-
-									<div class="testimonials-meta">
-										<div class="media-object align-center">
-											<div class="media-object-section">
-												<div class="rh-thumbnail"><img class="grayscale" src="<?php bloginfo('template_url'); ?>/img/users/user-05.jpg" alt="Kirk Barron, Montana's Cookhouse" />
-												</div>
-											</div>
-											<div class="media-object-section">
-												<span class="h5 author">Nome do cliente</span>
-												<span class="company">Brasil/RJ</span>
-											</div>
-										</div>
-									</div>
-
-								</section><!-- /end .testimonials-item -->
-
-								<!-- .testimonials-item -->
-								<section class="testimonials-item text-center">
-									<i class="icon zmdi zmdi-quote fa fa-quote-right"></i>
-
-									<p>Illum quidem commodi, perspiciatis quisquam odio culpa quo esse itaque, numquam, sed nobis voluptatum soluta eligendi, suscipit? Nobis laudantium unde eligendi nihil ipsam cumque praesentium officiis, earum quam non similique, ex illum esse delectus
-										beatae suscipit inventore!</p>
-
-									<div class="testimonials-divider">
-										<svg class="testimonials-corner">
-											 <use xlink:href='#corner'></use>
-										</svg>
-									</div>
-
-									<div class="testimonials-meta">
-										<div class="media-object align-center">
-											<div class="media-object-section">
-												<div class="rh-thumbnail"><img class="grayscale" src="<?php bloginfo('template_url'); ?>/img/users/user-02.jpg" alt="Elma Simpson, Mode O'Day" />
-												</div>
-											</div>
-											<div class="media-object-section">
-												<span class="h5 author">Nome do cliente</span>
-												<span class="company">Brasil/MG</span>
-											</div>
-										</div>
-									</div>
-
-								</section><!-- /end .testimonials-item -->
+                                        <div class="testimonials-meta">
+                                            <div class="media-object align-center">
+                                                <div class="media-object-section">
+                                                    <span class="h5 author"><?php the_sub_field('nome'); ?></span>
+                                                    <span class="company"><?php the_sub_field('pais'); ?></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section><!-- /end .testimonials-item -->
+                                    <?php endwhile; endif; ?>
+                                <?php endwhile; wp_reset_query(); endif; ?>
 
 							</div><!-- /end .owl-carousel.testimonials -->
 

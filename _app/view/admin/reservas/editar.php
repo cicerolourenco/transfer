@@ -59,15 +59,15 @@
                 </div>
 
                 <div class="col-md-6 col-lg-3">
-                    <?php \Campo::write($this, array('id'=>'qtd_adt', 'label'=>'Adultos', 'obs'=>'(10 anos ou mais)', 'type'=>'select', 'lista_simples'=>array(1,2,3,4,5,6,7,8,9,10))); ?>
+                    <?php \Campo::write($this, array('id'=>'qtd_adt', 'label'=>'Adultos', 'obs'=>'(10 anos ou mais)', 'type'=>'select', 'lista_simples'=>array(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30))); ?>
                 </div>
 
                 <div class="col-md-6 col-lg-3">
-                    <?php \Campo::write($this, array('id'=>'qtd_chd_5', 'label'=>'Bebês', 'obs'=>'(0 a 4 anos)', 'type'=>'select', 'lista_simples'=>array(0,1,2,3,4,5,6,7,8,9,10))); ?>
+                    <?php \Campo::write($this, array('id'=>'qtd_chd_5', 'label'=>'Bebês', 'obs'=>'(0 a 4 anos)', 'type'=>'select', 'lista_simples'=>array(0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30))); ?>
                 </div>
 
                 <div class="col-md-6 col-lg-3">
-                    <?php \Campo::write($this, array('id'=>'qtd_chd_10', 'label'=>'Crianças', 'obs'=>'(5 a 9 anos)', 'type'=>'select', 'lista_simples'=>array(0,1,2,3,4,5,6,7,8,9,10))); ?>
+                    <?php \Campo::write($this, array('id'=>'qtd_chd_10', 'label'=>'Crianças', 'obs'=>'(5 a 9 anos)', 'type'=>'select', 'lista_simples'=>array(0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30))); ?>
                 </div>
 
                 <div class="col-md-6 col-lg-6">
@@ -140,7 +140,7 @@
             <div class="row clearfix">
 
                 <div class="col-md-12 col-lg-12">
-                    <?php \Campo::write($this, array('id'=>'observacoes', 'label'=>'Observações', 'type'=>'textarea', 'maxlength'=>1000, 'contador'=>true, 'obr'=>false)); ?>
+                    <?php \Campo::write($this, array('id'=>'observacoes', 'label'=>'Observações', 'type'=>'textarea', 'maxlength'=>1000, 'contador'=>true, 'obr'=>false, 'obs'=>'Texto visível para o cliente, mesmo depois da reserva')); ?>
                 </div>
 
                 <div class="col-md-6 col-lg-6">
@@ -151,6 +151,19 @@
                     <?php \Campo::write($this, array('id'=>'motorista', 'label'=>'Motorista', 'obr'=>false)); ?>
                 </div>
 
+                <?php
+                if($this->objeto)
+                {
+                    ?>
+                    <div class="col-md-6 col-lg-6">
+                        <label class="form-label">Link de alteração</label>
+                        <div class="form-group">
+                            <span class="valor"><a href="<?=$this->objeto->get_link_altera()?>"><?=$this->hash?></a></span>
+                        </div>
+                    </div>
+                    <?php
+                }
+                ?>
             </div><!-- .row.clearfix -->
 
 

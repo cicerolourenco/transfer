@@ -3,6 +3,7 @@
 // se já vem com dados preenchidos, calcula o preço
 if($_POST)
 {
+	//Utils::dumpa($_POST);
 
 	$bairro = new Bairro(floor($_POST['id_bairro']));
 	if($bairro->id)
@@ -25,41 +26,42 @@ if($_POST)
 
 		if(!$erro)
 		{
-			$v_chega = explode('-', $_POST['data_chegada']);
-			$dt_chega = strtotime($v_chega[2].'-'.$v_chega[1].'-'.$v_chega[0]);
-			if($dt_chega < $dia_min)
+			if($_POST['tiporeserva']!=3)
 			{
-				$erro = true;
-				$msg_erro = 'Data de chegada inválida. Antecedência insuficiente.';
+				$v_chega = explode('-', $_POST['data_chegada']);
+				$dt_chega = new Datetime($v_chega[2].'-'.$v_chega[1].'-'.$v_chega[0]);
+
+				if($dt_chega->diff($dia_min) < 0)
+				{
+					$erro = true;
+					$msg_erro = 'Data de chegada inválida (' . $_POST['data_chegada'] . '). Antecedência insuficiente (mín: ' . $dia_min->format('d-m-Y') . ').';
+				}
 			}
 		}
 
 
 		if(!$erro)
 		{
-			$v_parte = explode('-', $_POST['data_partida']);
-			$dt_parte = strtotime($v_parte[2].'-'.$v_parte[1].'-'.$v_parte[0]);
-			if($dt_chega < $dia_min)
+			if($_POST['tiporeserva']!=2)
 			{
-				$erro = true;
-				$msg_erro = 'Data de saída inválida. Antecedência insuficiente.';
+				$v_parte = explode('-', $_POST['data_partida']);
+				$dt_parte = new Datetime($v_parte[2].'-'.$v_parte[1].'-'.$v_parte[0]);
+
+				if($dt_parte->diff($dia_min) < 0)
+				{
+					$erro = true;
+					$msg_erro = 'Data de saída inválida (' . $_POST['data_partida'] . '). Antecedência insuficiente (mín: ' . $dia_min->format('d-m-Y') . ').';
+				}
 			}
 		}
 
-		/*
-		if(!$erro)
-		{
-			$erro = true;
-			$msg_erro = 'ERRO TEMPORÁRIO';
-		}
-		*/
 		
 		if(!$erro)
 		{
 			$objeto = new Reserva();
 			$objeto->fromVetor($_POST);
-			$objeto->quando_chega = $v_chega[2].'-'.$v_chega[1].'-'.$v_chega[0] . ' ' . $_POST['hora_chegada'];
-			$objeto->quando_parte = $v_parte[2].'-'.$v_parte[1].'-'.$v_parte[0] . ' ' . $_POST['hora_partida'];
+			$objeto->quando_chega = $_POST['tiporeserva']==3 ? null : $v_chega[2].'-'.$v_chega[1].'-'.$v_chega[0] . ' ' . $_POST['hora_chegada'];
+			$objeto->quando_parte = $_POST['tiporeserva']==2 ? null : $v_parte[2].'-'.$v_parte[1].'-'.$v_parte[0] . ' ' . $_POST['hora_partida'];
 			$objeto->id_comuna = $comuna->id;
 			$objeto->preco = $objeto->calcula_preco();
 			$objeto->quando = date('Y-m-d H:i');
@@ -111,7 +113,7 @@ if($_POST)
 									<select class="input-group-field placeholder" name="qtd_adt" required>
 										<option disabled selected hidden value="">Quantos adultos? (10 anos ou mais)</option>
 										<?php
-										for($i=1; $i<=10; $i++)
+										for($i=1; $i<=30; $i++)
 										{
 											?>
 											<option value="<?=$i?>"><?=$i?></option>
@@ -129,7 +131,7 @@ if($_POST)
 									<select class="input-group-field placeholder" name="qtd_chd_5">
 										<option selected value="0">Bebês (0 a 4 anos)</option>
 										<?php
-										for($i=0; $i<=10; $i++)
+										for($i=0; $i<=30; $i++)
 										{
 											?>
 											<option value="<?=$i?>"><?=$i?></option>
@@ -147,7 +149,7 @@ if($_POST)
 									<select class="input-group-field placeholder" name="qtd_chd_10">
 										<option selected value="0">Crianças (5 a 9 anos)</option>
 										<?php
-										for($i=0; $i<=10; $i++)
+										for($i=0; $i<=30; $i++)
 										{
 											?>
 											<option value="<?=$i?>"><?=$i?></option>
@@ -159,7 +161,7 @@ if($_POST)
 							</label>
 						</div>
 					</div>
-					<div class="row medium-6">
+					<div class="row small-up-1 medium-up-2">
 						<div class="column">
 							<label>
 								<span class="input-group">
@@ -218,7 +220,7 @@ if($_POST)
 
 					<div class="text-center">
 						<button class="button rh-button mb0" type="submit"><i class="zmdi zmdi-mail-send"></i>
-							<span>Reservar</span>
+							<span>Cotar</span>
 						</button>
 					</div>
 
@@ -421,7 +423,7 @@ if($_POST)
                             </div>
                             <div class="row">
                                 <div class="column text-center">
-                                    <a class="button rh-button mb0" href="#" onclick="window.history.go(-1); return false;"><i class="zmdi zmdi-mail-send"></i> <span>Alterar dados da reserva</span></a>
+                                    <a class="button rh-button mb0" href="#" onclick="window.history.go(-1); return false;"><i class="zmdi zmdi-mail-send"></i> <span>Alterar dados</span></a>
                                 </div>
                             </div>
                         </div>
@@ -431,17 +433,23 @@ if($_POST)
 
 						<header class="s-header align-center" style="margin-top: 50px;">
 							<h2 class="s-headline"> Dados do Voo<span class="s-headline-decor"></span></h2>
+                            <?php if($v_tipos[$_POST['tiporeserva']] == 'Somente volta' || $v_tipos[$_POST['tiporeserva']] == 'Ida e volta' ) : ?>
+                            <br><br>
+                            <p>No Transfer Out a saída do hotel é realizada com 3 a 4 horas antes do voo dependendo do horário da saída.</p>
+                            <?php endif; ?>
 						</header>
                         
-						<div class="row js-datepicker-group">
+						<div class="row js-datepicker-group small-up-1 medium-up-3">
 							<div class="column medium-4">
 								<label class="chegada">
+                                    <p class="mobile-hidden">Data de chegada</p>
 									<span class="input-group">
 										<span class="input-group-label zmdi zmdi-calendar-check fa fa-calendar-check-o"></span>
 										<input class="input-group-field js-datepicker-date chegadainput" type="text" name="data_chegada" placeholder="Data de chegada" required value="<?=$_POST['data_chegada']?>">
 									</span>
 								</label>
 								<label class="partida">
+                                    <p class="mobile-hidden">Data de saída</p>
 									<span class="input-group">
 										<span class="input-group-label zmdi zmdi-calendar-close fa fa-calendar-times-o"></span>
 										<input class="input-group-field js-datepicker-date partidainput" type="text" name="data_partida" placeholder="Data de saída" required value="<?=$_POST['data_partida']?>">
@@ -450,12 +458,14 @@ if($_POST)
 							</div>
 							<div class="column medium-4">
 								<label class="chegada">
+                                    <p class="mobile-hidden">Horário do voo de chegada</p>
 									<span class="input-group">
 										<span class="input-group-label zmdi zmdi-alarm-check fa fa-clock-o"></span>
 										<input class="input-group-field js-datepicker-time chegadainput" type="text" name="hora_chegada" placeholder="Horário do voo de chegada" required value="<?=$_POST['hora_chegada']?>">
 									</span>
 								</label>
 								<label class="partida">
+                                    <p class="mobile-hidden">Horário do voo de saída</p>
 									<span class="input-group">
 										<span class="input-group-label zmdi zmdi-alarm-off fa fa-clock-o"></span>
 										<input class="input-group-field js-datepicker-time partidainput" type="text" name="hora_partida" placeholder="Horário do voo de saída" required value="<?=$_POST['hora_partida']?>">
@@ -464,12 +474,14 @@ if($_POST)
 							</div>
 							<div class="column medium-4">
 								<label class="chegada">
+                                    <p class="mobile-hidden">Voo de chegada</p>
 									<span class="input-group">
 										<span class="input-group-label zmdi zmdi-airplane zmdi-hc-fw"></span>
 										<input class="input-group-field chegadainput" type="text" name="numero_voo_chega" placeholder="Número do voo de chegada" required value="<?=$_POST['numero_voo_chega']?>">
 									</span>
 								</label>
 								<label class="partida">
+                                    <p class="mobile-hidden">Voo de saída</p>
 									<span class="input-group">
 										<span class="input-group-label zmdi zmdi-airplane zmdi-hc-fw"></span>
 										<input class="input-group-field partidainput" type="text" name="numero_voo_parte" placeholder="Número do voo de saída" required value="<?=$_POST['numero_voo_parte']?>">
@@ -478,7 +490,7 @@ if($_POST)
 							</div>
 						</div>
 						
-						<div class="row">
+						<div class="row small-up-1  medium-up-3">
 							<div class="column medium-4 text-center">
 								<label>
 									<span class="input-group">
@@ -514,7 +526,7 @@ if($_POST)
 							</div>*/ ?>
 						</div>
 
-						<div class="row">
+						<div class="row small-up-1">
 							<div class="column medium-12">
 								<label>Observações</label>
 								<span class="input-group">
@@ -607,7 +619,7 @@ if($_POST)
 								<label>
 									<input id="checkbox1" type="checkbox" required>
 									<span class="custom-checkbox"><i class="icon-check"></i>
-									</span>Li e aceito os <a href="<?php bloginfo('url'); ?>/termos-e-condicoes/">termos e condições</a>
+									</span>Para finalizar a reserva é preciso aceitar os nossos termos e condições. Para acessar basta <a href="<?php bloginfo('url'); ?>/termos-e-condicoes/" target="_blank">clicar aqui.</a>
 								</label>
 							</div>
 						</div>
